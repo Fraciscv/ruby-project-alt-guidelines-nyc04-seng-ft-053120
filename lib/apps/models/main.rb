@@ -38,6 +38,8 @@ class Main
     #     ((ENV['LINES'].to_i-2)/2-9).times do puts (" ")*window_l).colorize(:color => :light_yellow, :background => :black) end
     # end
     def welcome
+        p "WELCOME".colorize(:blue)
+
         puts ' 
             ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                
             ░░░░▄██████████████████████▄░░░░                                 
@@ -71,10 +73,29 @@ class Main
             ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
 '.blue.on_yellow
+
+
     end
 
-    def login_register_prompt
 
+
+    def login_register_prompt
+       user_response = prompt.select("Login in OR Register.",["login", "Register"])
+       
+       if user_response == "Register"
+           puts "~~~lets sign you up!!~~~"
+        #    create a method that creates a new users and prompts user for information on signing up
+        # prompt for username/password
+        # name
+           User.make_a_new_user
+       elsif user_response == "login"
+        # needs a method that will look for the user in data base by 
+        # askign for username and pasword 
+        # if this matches let them "in"
+           puts "~~Nice to see you again!!~~~"
+        #    calls a method that locats user
+           puts "find user"
+       end
     end
 
 end
