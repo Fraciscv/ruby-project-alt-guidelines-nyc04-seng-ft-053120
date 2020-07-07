@@ -89,7 +89,7 @@ class Main
             puts 'pimp my profile'
         when "Seeking Knowledge"
             #lesson_review
-            puts "learn learn learn submit"
+            Lesson.lesson_interface
         else
             #bmo_dance_party
             puts 'my name is BMO! nice to meet you!'
