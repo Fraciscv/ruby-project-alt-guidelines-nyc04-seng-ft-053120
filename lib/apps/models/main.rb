@@ -87,6 +87,7 @@ class Main
             #profile_edit
             puts 'You have choosen to "Pimp my Profile"'
             user_instance.edit_my_profile
+            binding.pry
         when "Seeking Knowledge"
             #lesson_review
             puts "learn learn learn submit"

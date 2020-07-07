@@ -96,6 +96,7 @@ class User < ActiveRecord::Base
     def edit_my_profile
         # binding.pry
         self
+        binding.pry
     end
 
 
