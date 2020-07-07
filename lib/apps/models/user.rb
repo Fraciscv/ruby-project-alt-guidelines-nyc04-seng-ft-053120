@@ -70,9 +70,7 @@ class User < ActiveRecord::Base
         \n        because we have no way of retrieving it for you... <3 ~~~ chu            \n
                 OH!! and ummm, you now belong to us. #{user_instance.cohort}        ".black.on_yellow.blink
 
-    end
-
-    
+    end  
 
     def self.password_prompt
         prompt = TTY::Prompt.new
@@ -93,6 +91,11 @@ class User < ActiveRecord::Base
             [self.user_name, self.name, self.status,self.cohort, self.bio]]
         puts user_table.render(:unicode, alignments: [:center, :center], padding: [1,1,0,1] )
         
+    end
+
+    def edit_my_profile
+        # binding.pry
+        self
     end
 
 

@@ -54,16 +54,15 @@ class Main
         # user_instance = []
         if answer == "Login"
            user = User.log_someone_in
-        #    user_instance << 
-            #user.display_profile
+            user
         elsif answer == "Register"
             user = User.create_a_new_user
             # user_instance << 
             user.display_profile
-            
+            user
         end
         # user_instance[0]
-        # user.display_profile
+         user
     end
 
     def self.bmo
@@ -71,7 +70,7 @@ class Main
         Main.welcome 
     end
 
-    def users_interface
+    def users_interface(user_instance)
         activity_options = [
             "Looking for Mischief",
             "Looking to update",
@@ -86,7 +85,8 @@ class Main
             puts 'joke jokes jokes'
         when "Looking to update"
             #profile_edit
-            puts 'pimp my profile'
+            puts 'You have choosen to "Pimp my Profile"'
+            user_instance.edit_my_profile
         when "Seeking Knowledge"
             #lesson_review
             Lesson.lesson_interface
