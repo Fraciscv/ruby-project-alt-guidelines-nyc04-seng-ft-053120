@@ -1,11 +1,11 @@
 class Lesson < ActiveRecord::Base
     has_many :likes, through: :users
     has_many :comments, through: :users
-    attr_accessor :prompt, :lesson
+    # attr_accessor :prompt, :lesson
 
-    def initialize
-        @prompt = TTY::Prompt.new
-    end
+    # def initialize
+    #     @prompt = TTY::Prompt.new
+    # end
 
     def self.lesson_interface
         prompt = TTY::Prompt.new

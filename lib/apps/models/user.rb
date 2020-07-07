@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-    has_many :comments
+    has_many :lessons, through: :comments
     has_many :minions
     has_many :like
     
@@ -29,13 +29,13 @@ class User < ActiveRecord::Base
         pass = self.password_prompt
             if User.find_by(user_name: username) && User.find_by(password: pass)
                 
-                name = User.find_by(user_name: username)
-                name.status = "Online".green.on_black.blink
+                user_instance = User.find_by(user_name: username)
+                user_instance.status = "Online".green.on_black.blink
                 Main.bmo
                 puts "~~~~Welcome back #{username} today is #{Time.now}~~~~~ " 
                 
-                name.display_profile
-                
+                user_instance.display_profile
+                user_instance
             else
                 puts "~~~your username or password are incorrect.~~~"
                 self.log_someone_in
@@ -84,19 +84,17 @@ class User < ActiveRecord::Base
 
     end
 
-    def display_profile
-    
-        prompt = TTY::Prompt.new  
+    def display_profile   
         user_table = TTY::Table.new ['User Name','Name','Status','Cohort','Bio'], [
             [self.user_name, self.name, self.status,self.cohort, self.bio]]
-        puts user_table.render(:unicode, alignments: [:center, :center], padding: [1,1,0,1] )
-        
+        puts user_table.render(:unicode, alignments: [:center, :center], padding: [1,1,0,1] )    
     end
 
-    def edit_my_profile
-        # binding.pry
-        self
-        binding.pry
+    def self.edit_my_profile(user)
+        prompt = TTY::Prompt.new 
+        mutables = ["My Name", "Cohort", "Bio", "Self-Destruct"]
+       users_choice = prompt.select("What would you like to change?",mutables)
+       
     end
 
 

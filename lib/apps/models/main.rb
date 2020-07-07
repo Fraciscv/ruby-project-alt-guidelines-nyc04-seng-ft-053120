@@ -51,18 +51,21 @@ class Main
             "Login",
             "Register"
         ])
+        user_instance = []
         # user_instance = []
         if answer == "Login"
            user = User.log_someone_in
-            user
+            user_instance << user
+    
         elsif answer == "Register"
             user = User.create_a_new_user
             # user_instance << 
             user.display_profile
-            user
+            user_instance << user
         end
         # user_instance[0]
-         user
+        user_instance[0]
+    
     end
 
     def self.bmo
@@ -71,11 +74,12 @@ class Main
     end
 
     def users_interface(user_instance)
+        
         activity_options = [
             "Looking for Mischief",
             "Looking to update",
             "Seeking Knowledge",
-            "                                                                                             "
+            "                                                                                           "
         ]
         user_input = prompt.select("What are you looking for today?",activity_options )
 
@@ -85,8 +89,10 @@ class Main
             puts 'joke jokes jokes'
         when "Looking to update"
             #profile_edit
-            puts 'You have choosen to "Pimp my Profile"'
-            user_instance.edit_my_profile
+            puts '~~~~~You have choosen to "Pimp my Profile"~~~~'.blue.on_yellow
+            binding.pry
+            User.edit_my_profile(user_instance)
+            puts "it didnt run"
             binding.pry
         when "Seeking Knowledge"
             #lesson_review

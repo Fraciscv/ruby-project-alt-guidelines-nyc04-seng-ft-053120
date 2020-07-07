@@ -31,8 +31,8 @@ joke7 = Joke.create(content: "Chuck Norris’s beard can type 140 wpm.", genre: 
 #create lessons
 #title, summary, location
 lesson1 = Lesson.create(title:"Super Lab", summary: "Define two classes, one of which inherits from another.")
-lesson2 = Lesson.create(title:"Advanced Class Methods Lab", summary:"Build custom class constructors.")
-lesson3 = Lesson.create(title:"OO Cash Register", summary:"Build a class with instance methods.")
+lesson2 = Lesson.create(title:"Advanced Class Methods Lab", summary:"Build custom classes constructors.")
+lesson3 = Lesson.create(title:"OO Cash Register", summary:"Build a classes with instance methods.")
 lesson4 = Lesson.create(title:"Pigeon Organizer Lab", summary:"Iterate over nested hashes. Sort and manipulate hashes")
 lesson5 = Lesson.create(title:"Arrays of Hashes Lab", summary:"Recognize vocabulary term: array of hashes (AoH)")
 lesson6 = Lesson.create(title:"Green Grocer Part 1", summary:"Translate data from AoH to AoH")
