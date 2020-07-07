@@ -30,6 +30,7 @@ class User < ActiveRecord::Base
             if User.find_by(user_name: username) && User.find_by(password: pass)
                 
                 name = User.find_by(user_name: username)
+                name.status = "Online".green.on_black.blink
                 Main.bmo
                 puts "~~~~Welcome back #{username} today is #{Time.now}~~~~~ " 
                 

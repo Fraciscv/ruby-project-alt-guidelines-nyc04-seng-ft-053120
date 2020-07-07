@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2020_07_04_214136) do
     t.string "password"
     t.integer "num_of_minion_followed"
     t.integer "minion_id"
-    t.boolean "status"
+    t.string "status"
   end
 
 end

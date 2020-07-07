@@ -10,7 +10,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password
       t.integer :num_of_minion_followed
       t.integer :minion_id
-      t.boolean :status
+      t.string :status
       
       t.timestamp
     end

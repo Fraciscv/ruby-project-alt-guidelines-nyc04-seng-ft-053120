@@ -20,15 +20,15 @@ class Main
                     ░░░░█░█░░░░░░░▀▀▀▀░░░░░░░█░█░░░░                        
                     ░░░░█░█░░░░░░░░░░░░░░░░░░█░█░░░░                    
                     ░█▌░█░▀██████████████████▀░█░▐█░                        
-                    _       _    _                  _       _    _               
+                     _       _    _                  _       _    _               
                     / /\    / /\ /\_\               / /\    / /\ /\_\             
-                / / /   / / // / /         _    / / /   / / // / /         _   
-                / /_/   / / / \ \ \__      /\_\ / /_/   / / / \ \ \__      /\_\ 
-                / /\ \__/ / /   \ \___\    / / // /\ \__/ / /   \ \___\    / / / 
+                   / / /   / / // / /         _    / / /   / / // / /         _   
+                  / /_/   / / / \ \ \__      /\_\ / /_/   / / / \ \ \__      /\_\ 
+                 / /\ \__/ / /   \ \___\    / / // /\ \__/ / /   \ \___\    / / / 
                 / /\ \___\/ /     \__  /   / / // /\ \___\/ /     \__  /   / / /  
-            / / /\/___/ /      / / /   / / // / /\/___/ /      / / /   / / /   
-            / / /   / / /      / / /   / / // / /   / / /      / / /   / / /    
-            / / /   / / /      / / /___/ / // / /   / / /      / / /___/ / /     
+               / / /\/___/ /      / / /   / / // / /\/___/ /      / / /   / / /   
+              / / /   / / /      / / /   / / // / /   / / /      / / /   / / /    
+             / / /   / / /      / / /___/ / // / /   / / /      / / /___/ / /     
             / / /   / / /      / / /____\/ // / /   / / /      / / /____\/ /      
             \/_/    \/_/       \/_________/ \/_/    \/_/       \/_________/       
                                                                             
@@ -39,8 +39,11 @@ class Main
                     ░░░░░░░▐██░░░░░░░░░░░░██▌░░░░░░░
                     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
                     
-        Welcome to our application!
+                    Welcome to our application!
         '.blue.on_yellow
+        # font = TTY::Font.new(:block)
+        # puts font.write("Welcome" "to\n" "our" "application", letter_spacing: 2)
+
     end
 
     def login_register_prompt
@@ -70,12 +73,27 @@ class Main
 
     def users_interface
         activity_options = [
-            "Looking for Mischeif",
+            "Looking for Mischief",
             "Looking to update",
             "Seeking Knowledge",
             "                                                                                             "
         ]
         user_input = prompt.select("What are you looking for today?",activity_options )
+
+        case user_input   
+        when "Looking for Mischief" 
+            #joke_method
+            puts 'joke jokes jokes'
+        when "Looking to update"
+            #profile_edit
+            puts 'pimp my profile'
+        when "Seeking Knowledge"
+            #lesson_review
+            puts "learn learn learn submit"
+        else
+            #bmo_dance_party
+            puts 'my name is BMO! nice to meet you!'
+        end
 
     end
 
