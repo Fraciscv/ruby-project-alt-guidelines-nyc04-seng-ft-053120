@@ -6,10 +6,9 @@ main_interface = Main.new()
 Main.welcome
 # this below will call the remaining methods
 main_interface.login_register_prompt
-system ('clear')
 
- Main.welcome
- main_interface.users_option
+#  Main.welcome
+ main_interface.users_interface
 
 
 

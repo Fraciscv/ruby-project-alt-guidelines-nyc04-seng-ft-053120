@@ -57,9 +57,10 @@ class Main
             user = User.create_a_new_user
             # user_instance << 
             user.display_profile
+            binding.pry
         end
         # user_instance[0]
-    
+        # user.display_profile
     end
 
     def self.bmo
@@ -67,7 +68,7 @@ class Main
         Main.welcome 
     end
 
-    def users_option
+    def users_interface
         activity_options = [
             "Looking for Mischeif",
             "Looking to update",
