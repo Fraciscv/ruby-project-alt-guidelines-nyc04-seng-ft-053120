@@ -90,12 +90,60 @@ class User < ActiveRecord::Base
         puts user_table.render(:unicode, alignments: [:center, :center], padding: [1,1,0,1] )    
     end
 
-    def self.edit_my_profile(user)
+    def self.edit_my_profile(user_instance)
         prompt = TTY::Prompt.new 
         mutables = ["My Name", "Cohort", "Bio", "Self-Destruct"]
        users_choice = prompt.select("What would you like to change?",mutables)
-       
+       case users_choice 
+       when "My Name"
+        #   prompt and change name
+        user_instance.prompt_for_users_name
+       when "Cohort"
+        #    prompt_for_cohort
+        user_instance.prompt_for_cohort
+       when "Bio"
+        # prompt for input
+        user_instance.prompt_for_bio
+       else
+        #    this should prompt if they are sure
+        # then delte their row in the database
+       end
     end
+
+    def prompt_for_users_name
+        prompt = TTY::Prompt.new 
+        users_input = prompt.ask("Well what would like to be called?")
+        puts "Congrats Your Name Is Now #{users_input}"
+        self.update_and_display(name: users_input)   
+    end
+
+    def prompt_for_cohort
+        
+        prompt = TTY::Prompt.new 
+        prompt.yes?("Are you betraying your cohort? You can answer honestly... I won't judge. ;D ")
+        cohort = prompt.select("What Cohort do you belong to", 
+        [
+            "Pryñatas",
+            "404's", 
+            "The Git Up",
+            "NOLB",
+            "The Go Gitters",
+            "French Pry Cult"
+        ])
+        puts "Well then, You now belong to the #{cohort}"
+        self.update_and_display(cohort: cohort)
+        
+    end
+    def update_and_display(hash)
+        self.update(hash)
+        self.display_profile
+    end
+    def prompt_for_bio
+        prompt = TTY::Prompt.new 
+        new_bio = prompt.ask("Type it up what's your story?")
+        self.update_and_display(bio: new_bio)
+    end
+
 
 
 end

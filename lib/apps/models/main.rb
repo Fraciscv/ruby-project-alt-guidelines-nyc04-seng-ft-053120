@@ -90,10 +90,10 @@ class Main
         when "Looking to update"
             #profile_edit
             puts '~~~~~You have choosen to "Pimp my Profile"~~~~'.blue.on_yellow
-            binding.pry
+            
             User.edit_my_profile(user_instance)
             puts "it didnt run"
-            binding.pry
+         
         when "Seeking Knowledge"
             #lesson_review
             Lesson.lesson_interface
