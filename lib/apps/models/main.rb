@@ -48,22 +48,31 @@ class Main
             "Login",
             "Register"
         ])
-
+        # user_instance = []
         if answer == "Login"
-           loyal_user = User.log_someone_in
-           loyal_user.display_profile
+           user = User.log_someone_in
+        #    user_instance << 
+            user.display_profile
         elsif answer == "Register"
-            new_user = User.create_a_new_user
+            user = User.create_a_new_user
+            # user_instance << 
+            user.display_profile
         end
+        # user_instance[0]
+    
     end
 
     def self.bmo
         system ('clear')
         Main.welcome 
     end
-    def display_user_info
-        binding.pry
-        loyal_user.display_profile
+
+    def users_option
+        user_input = prompt.select("What are you looking for today?", [
+            "Looking for Mischeif",
+            "Looking to update",
+            "Seeking Knowledge"
+        ])
     end
 
             
