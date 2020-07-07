@@ -68,11 +68,13 @@ class Main
     end
 
     def users_option
-        user_input = prompt.select("What are you looking for today?", [
+        activity_options = [
             "Looking for Mischeif",
             "Looking to update",
             "Seeking Knowledge"
-        ])
+        ]
+        user_input = prompt.expand("What are you looking for today?",activity_options )
+
     end
 
             
