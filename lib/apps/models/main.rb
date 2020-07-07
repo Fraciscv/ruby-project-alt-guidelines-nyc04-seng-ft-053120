@@ -52,12 +52,12 @@ class Main
         if answer == "Login"
            user = User.log_someone_in
         #    user_instance << 
-            user.display_profile
+            #user.display_profile
         elsif answer == "Register"
             user = User.create_a_new_user
             # user_instance << 
             user.display_profile
-            binding.pry
+            
         end
         # user_instance[0]
         # user.display_profile
@@ -72,7 +72,8 @@ class Main
         activity_options = [
             "Looking for Mischeif",
             "Looking to update",
-            "Seeking Knowledge"
+            "Seeking Knowledge",
+            "                                                                                             "
         ]
         user_input = prompt.select("What are you looking for today?",activity_options )
 

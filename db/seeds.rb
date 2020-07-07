@@ -7,13 +7,13 @@ User.destroy_all
 
 #create users
 #name, user_name, age, bio, cohort, member_since, password, num_of_minion_followed, minion_d, status
-netaly = User.create(user_name: "Nutella", password: "1234567890")
-francisco = User.create(user_name: "Zerocool",password: "1234567890")
-tricia = User.create(user_name: "Patricia456",password: "1234567890")
-manon = User.create(user_name: "Manon234",password: "1234567890")
-donat = User.create(user_name: "Donut",password: "1234567890")
-barbara = User.create(user_name: "Barbi",password: "1234567890")
-karem = User.create(user_name: "Teflon",password: "1234567890")
+netaly = User.create(user_name: "Nutella", name: "Netaly Ramirez"  ,password: "1234")
+francisco = User.create(user_name: "Zerocool", name: "Francisco Andaur" ,password: "asdf")
+tricia = User.create(user_name: "Patricia456", name: "Patricia Anderson" ,password: "qwer")
+manon = User.create(user_name: "Manon234", name: "Manon De La Huerta" ,password: "1234567890")
+donat = User.create(user_name: "Donut", name: "Donat Depp" ,password: "1234567890")
+barbara = User.create(user_name: "Barbi", name: "Barbara Montenegro" ,password: "1234567890")
+karem = User.create(user_name: "Teflon", name: "Karem Johanson" ,password: "1234567890")
 
 
 

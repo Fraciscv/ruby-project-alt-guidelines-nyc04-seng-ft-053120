@@ -23,21 +23,27 @@ class User < ActiveRecord::Base
     end
      
     def self.log_someone_in
-        Main.bmo
+        #Main.bmo
         prompt = TTY::Prompt.new
         username = prompt.ask("what is your username?")
         pass = self.password_prompt
-            if found_user = User.find_by(user_name: username) && User.find_by(password: pass)
-                puts "~~~~Welcome back #{username} today is #{Time.now}~~~~~ "   
+            if User.find_by(user_name: username) && User.find_by(password: pass)
+                
+                name = User.find_by(user_name: username)
+                Main.bmo
+                puts "~~~~Welcome back #{username} today is #{Time.now}~~~~~ " 
+                
+                name.display_profile
+                
             else
                 puts "~~~your username or password are incorrect.~~~"
                 self.log_someone_in
+
             end
-        found_user
     end
 
     def self.create_a_new_user
-        Main.bmo
+        #
         prompt = TTY::Prompt.new
         username = self.check_user
         pass = self.password_prompt
@@ -51,13 +57,21 @@ class User < ActiveRecord::Base
         ])
         
         new_user = User.create(user_name: username, password: pass, cohort: cohort, member_since: Time.now, status:"Online")
-        puts "     ~~~~  Welcome #{username},  ~~~~    \n       
-        Your password is >>>#{pass}<<< don't lose it,                         
-        \n        because we have no way of retrieving it for you... <3 ~~~ chu            \n
-                OH!! and ummm, you now belong to us. #{cohort}        ".white.on_red.blink
-            sleep(5)
+    
+        Main.bmo
+        self.welcome_sign(new_user)
         new_user
     end
+
+    def self.welcome_sign(user_instance)
+        puts "                            ~~~~  Welcome #{user_instance.user_name},  ~~~~                                                 \n       
+        Your password is >>>#{user_instance.password}<<< don't lose it,                         
+        \n        because we have no way of retrieving it for you... <3 ~~~ chu            \n
+                OH!! and ummm, you now belong to us. #{user_instance.cohort}        ".black.on_yellow.blink
+
+    end
+
+    
 
     def self.password_prompt
         prompt = TTY::Prompt.new
