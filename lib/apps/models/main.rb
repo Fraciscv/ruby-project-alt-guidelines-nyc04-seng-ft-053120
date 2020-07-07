@@ -73,7 +73,7 @@ class Main
             "Looking to update",
             "Seeking Knowledge"
         ]
-        user_input = prompt.expand("What are you looking for today?",activity_options )
+        user_input = prompt.select("What are you looking for today?",activity_options )
 
     end
 

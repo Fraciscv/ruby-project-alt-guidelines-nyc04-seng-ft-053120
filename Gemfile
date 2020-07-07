@@ -10,3 +10,4 @@ gem "faker"
 gem 'tty-prompt'
 gem 'colorize'
 gem 'tty-table'
+gem 'tty-font'

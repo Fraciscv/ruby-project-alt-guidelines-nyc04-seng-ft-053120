@@ -55,13 +55,13 @@ class User < ActiveRecord::Base
         Your password is >>>#{pass}<<< don't lose it,                         
         \n        because we have no way of retrieving it for you... <3 ~~~ chu            \n
                 OH!! and ummm, you now belong to us. #{cohort}        ".white.on_red.blink
-            
+            sleep(5)
         new_user
     end
 
     def self.password_prompt
         prompt = TTY::Prompt.new
-        password = prompt.mask("what is your password?") 
+        password = prompt.mask("What is your password?") 
         if password.length < 4
             puts "Your password is not long enough, to party (minimum 4 character)"
             self.password_prompt
