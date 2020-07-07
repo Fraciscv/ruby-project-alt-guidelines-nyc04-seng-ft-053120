@@ -28,20 +28,18 @@ class User < ActiveRecord::Base
         username = prompt.ask("what is your username?")
         pass = self.password_prompt
             if found_user = User.find_by(user_name: username) && User.find_by(password: pass)
-                puts "~~~~Welcome back #{username} today is #{Time.now}~~~~~ "
-                found_user.display_profile
+                puts "~~~~Welcome back #{username} today is #{Time.now}~~~~~ "   
             else
                 puts "~~~your username or password are incorrect.~~~"
-                
                 self.log_someone_in
             end
+        found_user
     end
 
     def self.create_a_new_user
         Main.bmo
         prompt = TTY::Prompt.new
         username = self.check_user
-        
         pass = self.password_prompt
         cohort = prompt.select("What Cohort do you belong to", [
             "Pryñatas",
@@ -58,7 +56,7 @@ class User < ActiveRecord::Base
         \n        because we have no way of retrieving it for you... <3 ~~~ chu            \n
                 OH!! and ummm, you now belong to us. #{cohort}        ".white.on_red.blink
             
-        new_user.display_profile
+        new_user
     end
 
     def self.password_prompt
@@ -79,7 +77,7 @@ class User < ActiveRecord::Base
         user_table = TTY::Table.new ['User Name','Name','Status','Cohort','Bio'], [
             [self.user_name, self.name, self.status,self.cohort, self.bio]]
         puts user_table.render(:unicode, alignments: [:center, :center], padding: [1,1,0,1] )
-
+        
     end
 
 

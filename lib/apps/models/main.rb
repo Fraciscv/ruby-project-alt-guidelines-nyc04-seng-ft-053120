@@ -50,16 +50,20 @@ class Main
         ])
 
         if answer == "Login"
-            User.log_someone_in
+           loyal_user = User.log_someone_in
+           loyal_user.display_profile
         elsif answer == "Register"
-            User.create_a_new_user
+            new_user = User.create_a_new_user
         end
     end
 
     def self.bmo
         system ('clear')
-        Main.welcome
-        
+        Main.welcome 
+    end
+    def display_user_info
+        binding.pry
+        loyal_user.display_profile
     end
 
             
