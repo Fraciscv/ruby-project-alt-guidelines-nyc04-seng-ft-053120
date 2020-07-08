@@ -85,14 +85,9 @@ class Main
         when "Seeking Knowledge"
             #lesson_review
             Lesson.lesson_interface(user_instance)
-
+            
         when "EXIT"
-            # return to main
-            puts "your in the exit option".blue.on_yellow
-           
-            new_interface = Main.new()
-            new_interface.new_user
-           
+           self.new_user   
         else
             binding.pry
             #bmo_dance_party
@@ -103,13 +98,15 @@ class Main
 
     def new_user
         # by calling the class method of welcome this stays while the rest can refresh
+        system ('clear')
+        new_interface = Main.new()
         Main.welcome
         # this below will call the remaining methods
-        usser = self.login_register_prompt
-        self.user = usser
+        usser = new_interface.login_register_prompt
+        new_interface.user = usser
 
         #  Main.welcome
-        self.users_interface(usser)
+        new_interface.users_interface(usser)
     end
             
 end

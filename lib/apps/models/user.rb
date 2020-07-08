@@ -93,24 +93,24 @@ class User < ActiveRecord::Base
     def self.edit_my_profile(user_instance)
         prompt = TTY::Prompt.new 
         mutables = ["My Name", "Cohort", "Bio","Change Password", "Self-Destruct".colorize(:red)]
-       users_choice = prompt.select("What would you like to change?",mutables)
-       case users_choice 
-       when "My Name"
-        #   prompt and change name
-        user_instance.prompt_for_users_name
-       when "Cohort"
-        #    prompt_for_cohort
-        user_instance.prompt_for_cohort
-       when "Bio"
-        # prompt for input
-        user_instance.prompt_for_bio
-       when "Change Password"
-        user_instance.prompt_for_pass
-       else
-        #    this should prompt if they are sure
-        # then delte their row in the database
-        user_instance.begin_self_destruct
-       end
+        users_choice = prompt.select("What would you like to change?",mutables)
+        case users_choice 
+        when "My Name"
+            #   prompt and change name
+            user_instance.prompt_for_users_name
+        when "Cohort"
+            #    prompt_for_cohort
+            user_instance.prompt_for_cohort
+        when "Bio"
+            # prompt for input
+            user_instance.prompt_for_bio
+        when "Change Password"
+            user_instance.prompt_for_pass
+        else
+            #    this should prompt if they are sure
+            # then delte their row in the database
+            user_instance.begin_self_destruct
+        end
     end
 
     def prompt_for_users_name
@@ -149,7 +149,13 @@ class User < ActiveRecord::Base
         new_bio = prompt.ask("Type it up what's your story?")
         self.update_and_display(bio: new_bio)
     end
-
+    def prompt_for_pass
+        prompt = TTY::Prompt.new 
+        users_input = prompt.ask("Well what is your new password?")
+        puts "Congrats Your Password Is Now #{users_input}"
+        sleep (1)
+        self.update_and_display(password: users_input)
+    end
     def begin_self_destruct
         system('cls')
         count = 0
