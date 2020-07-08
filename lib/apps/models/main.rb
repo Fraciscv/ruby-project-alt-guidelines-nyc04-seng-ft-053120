@@ -96,7 +96,7 @@ class Main
          
         when "Seeking Knowledge"
             #lesson_review
-            Lesson.lesson_interface
+            Lesson.lesson_interface(user_instance)
         else
             #bmo_dance_party
             puts 'my name is BMO! nice to meet you!'
