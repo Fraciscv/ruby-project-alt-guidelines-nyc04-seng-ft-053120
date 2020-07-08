@@ -100,18 +100,25 @@ class User < ActiveRecord::Base
         when "My Name"
             #   prompt and change name
             user_instance.prompt_for_users_name
+           
+            user_instance.users_next_choice
+           
         when "Cohort"
             #    prompt_for_cohort
             user_instance.prompt_for_cohort
+            user_instance.users_next_choice
         when "Bio"
             # prompt for input
             user_instance.prompt_for_bio
+            user_instance.users_next_choice
         when "Change Password"
             user_instance.prompt_for_pass
+            user_instance.users_next_choice
         else
             #    this should prompt if they are sure
             # then delte their row in the database
             user_instance.begin_self_destruct
+            new_main = Main.new()
         end
     end
 
@@ -119,7 +126,8 @@ class User < ActiveRecord::Base
         prompt = TTY::Prompt.new 
         users_input = prompt.ask("Well what would like to be called?")
         puts "Congrats Your Name Is Now #{users_input}"
-        self.update_and_display(name: users_input)   
+        self.update_and_display(name: users_input) 
+
     end
 
     def prompt_for_cohort
@@ -144,6 +152,7 @@ class User < ActiveRecord::Base
         self.update(hash)
         Main.bmo
         self.display_profile
+
     end
 
     def prompt_for_bio
@@ -251,7 +260,22 @@ class User < ActiveRecord::Base
             sleep(1)
             user.display_profile
         end
-        binding.pry
+     
+
+    end
+
+    def users_next_choice
+        
+        prompt = TTY::Prompt.new 
+        users_input = prompt.select("What would you like to do next? ", [
+            "Update Somthing Else",
+            "Take Me Back Home"
+        ])
+        if users_input == "Update Somthing Else"
+            User.edit_my_profile(self)
+        else users_input == "Take Me Back Home"
+            Main.users_interface(self)
+        end
 
     end
 
