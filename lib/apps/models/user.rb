@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
     has_many :like
     
     def self.check_user
-        Main.bmo
+        #Main.bmo
         random_usernames = [
             "PowerpuffGirl279", "WedgeBiggs007", "AlveeRules", "YogaPosePretzel", "NoForksGiven","KanyeForPresident","CoffeeDaddy", "HobbitFeet429", "Mordor69", "Raffyisbae", "CharmanderCHARBOK", "TeenageMutantNinjaSquirtles", "Raffyisagoodboy", "RaffyAteMyLab", "ChuckNorrisLover"].sample
         prompt = TTY::Prompt.new

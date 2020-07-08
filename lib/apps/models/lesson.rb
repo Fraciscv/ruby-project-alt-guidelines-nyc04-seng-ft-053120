@@ -26,9 +26,9 @@ class Lesson < ActiveRecord::Base
         Main.bmo
         
         lessons = Lesson.all.map {|m| m.title}.flatten
+        binding.pr
 
         lesson_name = prompt.select('Choose a lesson?', lessons, filter: true)
-        binding.pry
         Lesson.all.find_by(title: lesson_name).display_lesson
      end
 
