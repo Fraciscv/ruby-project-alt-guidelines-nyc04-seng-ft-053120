@@ -16,7 +16,7 @@ class Lesson < ActiveRecord::Base
          #    user_instance << 
              #user.display_profile
         else interface == "Main Menu"
-#TODO   #user_instance.display_profile  needs to call on Class Method User > Display_profile and clear 
+        Main.users_interface(self)
          end
     
     end

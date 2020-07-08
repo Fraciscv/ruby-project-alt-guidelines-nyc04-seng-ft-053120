@@ -7,40 +7,25 @@ class Main
     end
 
     def self.welcome
-                puts ' 
-                    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                
-                    ░░░░▄██████████████████████▄░░░░                                 
-                    ░░░░█░░░░░░░░░░░░░░░░░░░░░░█░░░░                           
-                    ░░░░█░▄██████████████████▄░█░░░░                                                         
-                    ░░░░█░█░░░░░░░░░░░░░░░░░░█░█░░░░                            
-                    ░░░░█░█░░░░░░░░░░░░░░░░░░█░█░░░░                        
-                    ░░░░█░█░░█░░░░░░░░░░░░█░░█░█░░░░                
-                    ░░░░█░█░░░░░▄▄▄▄▄▄▄▄░░░░░█░█░░░░                        
-                    ░░░░█░█░░░░░▀▄░░░░▄▀░░░░░█░█░░░░                    
-                    ░░░░█░█░░░░░░░▀▀▀▀░░░░░░░█░█░░░░                        
-                    ░░░░█░█░░░░░░░░░░░░░░░░░░█░█░░░░                    
-                    ░█▌░█░▀██████████████████▀░█░▐█░                        
-                     _       _    _                  _       _    _               
-                    / /\    / /\ /\_\               / /\    / /\ /\_\             
-                   / / /   / / // / /         _    / / /   / / // / /         _   
-                  / /_/   / / / \ \ \__      /\_\ / /_/   / / / \ \ \__      /\_\ 
-                 / /\ \__/ / /   \ \___\    / / // /\ \__/ / /   \ \___\    / / / 
-                / /\ \___\/ /     \__  /   / / // /\ \___\/ /     \__  /   / / /  
-               / / /\/___/ /      / / /   / / // / /\/___/ /      / / /   / / /   
-              / / /   / / /      / / /   / / // / /   / / /      / / /   / / /    
-             / / /   / / /      / / /___/ / // / /   / / /      / / /___/ / /     
-            / / /   / / /      / / /____\/ // / /   / / /      / / /____\/ /      
-            \/_/    \/_/       \/_________/ \/_/    \/_/       \/_________/       
-                                                                            
-        ============================== a Netaly and Francisco production
-                    ░░░░░░░░██░░░░░░░░░░░░██░░░░░░░░
-                    ░░░░░░░░██░░░░░░░░░░░░██░░░░░░░░
-                    ░░░░░░░░██░░░░░░░░░░░░██░░░░░░░░
-                    ░░░░░░░▐██░░░░░░░░░░░░██▌░░░░░░░
-                    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-                    
-                    Welcome to our application!
-        '.blue.on_yellow
+        puts '              
+        
+        
+                                          _       _    _                        _       _    _               
+                                        / /\    / /\ /\_\                     / /\    / /\ /\_\             
+                                       / / /   / / // / / *       _          / / / * / / // / /         _   
+                      *               / /_/   / / / \ \ \__      /\_\       / /_/   / / / \ \ \__   *  /\_\ 
+                                     / /\ \__/ / /   \ \___\    / / /      / /\ \__/ / /   \ \___\    / / / 
+                               *    / /\ \___\/ /     \__  /   / / /      / /\ \___\/ /     \__  /   / / /  
+                                   / / /\/___/ /      / / /   / / /      / / /\/___/ /      / / /   / / /   
+                                  / / /   / / /      / / /   / / /   *  / / /   / / /      / / /   / / /    
+                                 / / /   / / /      / / /___/ / /      / / /   / / /      / / /___/ / /     
+                                / / /   / / /    * / / /____\/ /      / / /   / / /  *   / / /____\/ /   *  
+                *               \/_/    \/_/       \/_________/       \/_/    \/_/       \/_________/       
+                                                                                                              '.colorize(:yellow)
+
+                                                                                 
+       puts '                   ============================== a Netaly and Francisco production==========
+                                                     Welcome to our application!                                     '.yellow.blink
         # font = TTY::Font.new(:block)
         # puts font.write("Welcome" "to\n" "our" "application", letter_spacing: 2)
 
@@ -74,12 +59,13 @@ class Main
     end
 
     def users_interface(user_instance)
-        
+       
         activity_options = [
             "Looking for Mischief",
             "Looking to update",
-            "Seeking Knowledge",
-            "                                                                                           "
+            "Seeking Knowledge", 
+            "EXIT",
+            "                   "
         ]
         user_input = prompt.select("What are you looking for today?",activity_options )
 
@@ -87,23 +73,44 @@ class Main
         when "Looking for Mischief" 
             #joke_method
             puts 'joke jokes jokes'
+            Main.bmo
+            user.display_profile
         when "Looking to update"
             #profile_edit
             puts '~~~~~You have choosen to "Pimp my Profile"~~~~'.blue.on_yellow
             
             User.edit_my_profile(user_instance)
-            puts "it didnt run"
-         
+            Main.bmo
+            user.display_profile
         when "Seeking Knowledge"
             #lesson_review
             Lesson.lesson_interface(user_instance)
+
+        when "EXIT"
+            # return to main
+            puts "your in the exit option".blue.on_yellow
+           
+            new_interface = Main.new()
+            new_interface.new_user
+           
         else
+            binding.pry
             #bmo_dance_party
             puts 'my name is BMO! nice to meet you!'
         end
-
+        # user.display_profile
     end
 
+    def new_user
+        # by calling the class method of welcome this stays while the rest can refresh
+        Main.welcome
+        # this below will call the remaining methods
+        usser = self.login_register_prompt
+        self.user = usser
+
+        #  Main.welcome
+        self.users_interface(usser)
+    end
             
 end
 
