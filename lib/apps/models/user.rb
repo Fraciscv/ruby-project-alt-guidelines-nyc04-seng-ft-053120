@@ -251,9 +251,11 @@ class User < ActiveRecord::Base
 
             count +=1
             end
-            self.destroy(self.id)
+            self.destroy#(self.id)
            
             puts "You are now removed."
+            new_interface = Main.new()
+            new_interface.new_user
         else
             puts "I see you've changed your mind <3"
             # calls a main method that accepts the users info and displays the table
@@ -274,7 +276,8 @@ class User < ActiveRecord::Base
         if users_input == "Update Somthing Else"
             User.edit_my_profile(self)
         else users_input == "Take Me Back Home"
-            Main.users_interface(self)
+            newmain = Main.new()
+            newmain.users_interface(self)
         end
 
     end
