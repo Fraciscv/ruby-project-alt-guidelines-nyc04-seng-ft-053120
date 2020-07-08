@@ -3,6 +3,7 @@ class Lesson < ActiveRecord::Base
     has_many :comments, through: :users
     attr_accessor :prompt, :lesson
 
+
     def self.lesson_interface(user_instance)
         prompt = TTY::Prompt.new
         Main.bmo
@@ -16,7 +17,8 @@ class Lesson < ActiveRecord::Base
          #    user_instance << 
              #user.display_profile
         else interface == "Main Menu"
-        Main.users_interface(self)
+            newmain = Main.new()
+            newmain.users_interface(user_instance)
          end
     
     end
@@ -29,7 +31,9 @@ class Lesson < ActiveRecord::Base
 
         lesson_name = prompt.select('Choose a lesson?', lessons, filter: true)
         binding.pry
-        Lesson.all.find_by(title: lesson_name).display_lesson
+        lesson_found = Lesson.all.find_by(title: lesson_name)
+        lesson_found.display_lesson
+        
      end
 
      def display_lesson 
