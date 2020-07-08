@@ -74,7 +74,9 @@ class User < ActiveRecord::Base
 
     def self.password_prompt
         prompt = TTY::Prompt.new
-        password = prompt.mask("What is your password?") 
+        heart = prompt.decorate(" ✿ ".colorize(:yellow))
+
+        password = prompt.mask("What is your password?", mask: heart) 
         if password.length < 4
             puts "Your password is not long enough, to party (minimum 4 character)"
             self.password_prompt
