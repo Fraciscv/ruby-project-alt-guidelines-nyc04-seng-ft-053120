@@ -74,7 +74,9 @@ class User < ActiveRecord::Base
 
     def self.password_prompt
         prompt = TTY::Prompt.new
-        password = prompt.mask("What is your password?") 
+        heart = prompt.decorate(" ✿ ".colorize(:yellow))
+
+        password = prompt.mask("What is your password?", mask: heart) 
         if password.length < 4
             puts "Your password is not long enough, to party (minimum 4 character)"
             self.password_prompt
@@ -93,31 +95,39 @@ class User < ActiveRecord::Base
     def self.edit_my_profile(user_instance)
         prompt = TTY::Prompt.new 
         mutables = ["My Name", "Cohort", "Bio","Change Password", "Self-Destruct".colorize(:red)]
-       users_choice = prompt.select("What would you like to change?",mutables)
-       case users_choice 
-       when "My Name"
-        #   prompt and change name
-        user_instance.prompt_for_users_name
-       when "Cohort"
-        #    prompt_for_cohort
-        user_instance.prompt_for_cohort
-       when "Bio"
-        # prompt for input
-        user_instance.prompt_for_bio
-       when "Change Password"
-        user_instance.prompt_for_pass
-       else
-        #    this should prompt if they are sure
-        # then delte their row in the database
-        user_instance.begin_self_destruct
-       end
+        users_choice = prompt.select("What would you like to change?",mutables)
+        case users_choice 
+        when "My Name"
+            #   prompt and change name
+            user_instance.prompt_for_users_name
+           
+            user_instance.users_next_choice
+           
+        when "Cohort"
+            #    prompt_for_cohort
+            user_instance.prompt_for_cohort
+            user_instance.users_next_choice
+        when "Bio"
+            # prompt for input
+            user_instance.prompt_for_bio
+            user_instance.users_next_choice
+        when "Change Password"
+            user_instance.prompt_for_pass
+            user_instance.users_next_choice
+        else
+            #    this should prompt if they are sure
+            # then delte their row in the database
+            user_instance.begin_self_destruct
+            new_main = Main.new()
+        end
     end
 
     def prompt_for_users_name
         prompt = TTY::Prompt.new 
         users_input = prompt.ask("Well what would like to be called?")
         puts "Congrats Your Name Is Now #{users_input}"
-        self.update_and_display(name: users_input)   
+        self.update_and_display(name: users_input) 
+
     end
 
     def prompt_for_cohort
@@ -142,6 +152,7 @@ class User < ActiveRecord::Base
         self.update(hash)
         Main.bmo
         self.display_profile
+
     end
 
     def prompt_for_bio
@@ -149,7 +160,13 @@ class User < ActiveRecord::Base
         new_bio = prompt.ask("Type it up what's your story?")
         self.update_and_display(bio: new_bio)
     end
-
+    def prompt_for_pass
+        prompt = TTY::Prompt.new 
+        users_input = prompt.ask("Well what is your new password?")
+        puts "Congrats Your Password Is Now #{users_input}"
+        sleep (1)
+        self.update_and_display(password: users_input)
+    end
     def begin_self_destruct
         system('cls')
         count = 0
@@ -243,7 +260,22 @@ class User < ActiveRecord::Base
             sleep(1)
             user.display_profile
         end
-        binding.pry
+     
+
+    end
+
+    def users_next_choice
+        
+        prompt = TTY::Prompt.new 
+        users_input = prompt.select("What would you like to do next? ", [
+            "Update Somthing Else",
+            "Take Me Back Home"
+        ])
+        if users_input == "Update Somthing Else"
+            User.edit_my_profile(self)
+        else users_input == "Take Me Back Home"
+            Main.users_interface(self)
+        end
 
     end
 
