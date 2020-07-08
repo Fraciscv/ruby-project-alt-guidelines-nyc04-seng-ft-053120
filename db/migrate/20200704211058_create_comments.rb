@@ -6,6 +6,7 @@ class CreateComments < ActiveRecord::Migration[5.2]
       t.integer :like_id
       t.text :content
       t.datetime :posted
+      t.integer :lesson_id
       
       t.timestamp
     end

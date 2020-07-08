@@ -41,13 +41,13 @@ lesson7 = Lesson.create(title:"Green Grocer Part 2", summary:"Perform calculatio
 
 #create comments 
 #user_id, joke_id, like_id, content, posted
-comment1 = Comment.create(content: "This joke was super funny!", user_id:francisco.id)
-comment2 = Comment.create(content: "This joke was lame!", user_id:netaly.id)
-comment3 = Comment.create(content: "Amazing!!!!", user_id:donat.id)
-comment4 = Comment.create(content: "I had trouble with this lab, but here is a link that helped me out google.com", user_id:tricia.id)
-comment5 = Comment.create(content: "nothing sticks, so i took a break", user_id:barbara.id)
-comment6 = Comment.create(content: "this joke was super good!", user_id:karem.id)
-comment7 = Comment.create(content: "this joke was super terrinle!", user_id:manon.id)
+comment1 = Comment.create(content: "This joke was super funny!", user_id:francisco.id, joke_id: joke1.id)
+comment2 = Comment.create(content: "This joke was lame!", user_id:netaly.id, joke_id: joke2.id)
+comment3 = Comment.create(content: "Amazing!!!!", user_id:donat.id, joke_id: joke3.id)
+comment4 = Comment.create(content: "I had trouble with this lab, but here is a link that helped me out google.com", user_id:tricia.id, lesson_id: lesson6.id)
+comment5 = Comment.create(content: "nothing sticks, so i took a break", user_id:barbara.id, lesson_id: lesson7.id)
+comment6 = Comment.create(content: "this joke was super good!", user_id:karem.id, joke_id: joke4.id)
+comment7 = Comment.create(content: "this joke was super terrible!", user_id:manon.id, joke_id: joke5.id)
 
 #create likes
 #user_id, comment_id, joke_id, like_counter
