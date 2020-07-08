@@ -92,7 +92,7 @@ class User < ActiveRecord::Base
 
     def self.edit_my_profile(user_instance)
         prompt = TTY::Prompt.new 
-        mutables = ["My Name", "Cohort", "Bio", "Self-Destruct"]
+        mutables = ["My Name", "Cohort", "Bio", "Self-Destruct".colorize(:red)]
        users_choice = prompt.select("What would you like to change?",mutables)
        case users_choice 
        when "My Name"
@@ -107,6 +107,7 @@ class User < ActiveRecord::Base
        else
         #    this should prompt if they are sure
         # then delte their row in the database
+        user_instance.begin_self_destruct
        end
     end
 
@@ -134,16 +135,32 @@ class User < ActiveRecord::Base
         self.update_and_display(cohort: cohort)
         
     end
+
     def update_and_display(hash)
         self.update(hash)
         self.display_profile
     end
+
     def prompt_for_bio
         prompt = TTY::Prompt.new 
         new_bio = prompt.ask("Type it up what's your story?")
         self.update_and_display(bio: new_bio)
     end
 
+    def begin_self_destruct
+        Main.bmo
+        count = 0
+
+        while count < 4 do
+        Main.bmo
+        puts "Are you sure?".colorize(:red)
+        sleep(1)
+        puts "aRE YoU sURe?".colorize(:blue)
+        sleep(1)
+        count +=1
+        end
+
+    end
 
 
 end
