@@ -54,7 +54,14 @@ class User < ActiveRecord::Base
             "The Git Up",
             "NOLB",
             "The Go Gitters",
-            "French Pry Cult"
+            "French-Pry Cult",
+            "Alvee nap-time cult",
+            "Teflon",
+            "Shrimp Spine",
+            "Team Otha",
+            "Team Ian",
+            "Team Michelle",
+            "Team Ethan"
         ])
         
         new_user = User.create(user_name: username, password: pass, cohort: cohort, member_since: Time.now, status:"Online".green.blink)
@@ -65,10 +72,10 @@ class User < ActiveRecord::Base
     end
 
     def self.welcome_sign(user_instance)
-        puts "                           ~~~~  Welcome #{user_instance.user_name},  ~~~~                                       ".yellow.on_black     
-        puts "                     Your password is >>>#{user_instance.password}<<< don't lose it,                             ".black.on_yellow.blink
+        puts "                                 ~~~~~  Welcome #{user_instance.user_name},  ~~~~~                                       ".yellow.on_black     
+        puts "                     Your password is >>>#{user_instance.password}<<< don't lose it,                             ".black.on_yellow
         puts "                         because we have no way of retrieving it for you... <3                                   ".yellow.on_black
-        puts "                       OH!! and ummm, you now belong to us. #{user_instance.cohort}                              ".black.on_yellow.blink
+        puts "                       OH!! and ummm, you now belong to us. #{user_instance.cohort}                              ".black.on_yellow
 
     end  
 
@@ -273,7 +280,7 @@ class User < ActiveRecord::Base
             "Update Somthing Else",
             "Take Me Back Home"
         ])
-        if users_input == "Update Somthing Else"
+        if users_input == "Update Something Else"
             User.edit_my_profile(self)
         else users_input == "Take Me Back Home"
             newmain = Main.new()
