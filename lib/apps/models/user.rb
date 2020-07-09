@@ -57,7 +57,7 @@ class User < ActiveRecord::Base
             "French Pry Cult"
         ])
         
-        new_user = User.create(user_name: username, password: pass, cohort: cohort, member_since: Time.now, status:"Online")
+        new_user = User.create(user_name: username, password: pass, cohort: cohort, member_since: Time.now, status:"Online".green.blink)
     
         Main.bmo
         self.welcome_sign(new_user)
