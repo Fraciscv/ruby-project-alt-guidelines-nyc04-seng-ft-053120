@@ -60,8 +60,9 @@ During the Pandemic of 2020 Netaly and Francisco were involved in a coding Bootc
 4. you are ready to run the app, type this in into the terminal and it should load your HUHU.app
   -  `ruby bin/run.rb`
 
+
                                 **VOILA!!**
-![youdidit](/Photos/Welcome.png)
+  ![youdidit](/Photos/Welcome.png)
 
 
 ## How to use:
@@ -73,15 +74,7 @@ During the Pandemic of 2020 Netaly and Francisco were involved in a coding Bootc
     ![youdidit](/Photos/pimpmyprofile.png)
 - find lessons you might need help with using the `Seeking Knowledge` option.  Write a lab review! 
 
-    * The video should:
-      * Have an overview of your project. (2 minutes max)
-* Prepare a presentation to follow your video. (3 minutes max)
-    * Your presentation should:
-      * Describe something you struggled to build, and show us how you ultimately implemented it in your code.
-      * Discuss 3 things you learned in the process of working on this project.
-      * Address, if anything, what you would change or add to what you have today?
-      * Present any code you would like to highlight.
-* Write a blog post about the project and process.
+
 
   🎊 We've made it to the end of Mod 1, but we are just getting started  🎊
 
@@ -91,4 +84,8 @@ During the Pandemic of 2020 Netaly and Francisco were involved in a coding Bootc
 How do I delete my account? `There is a self Destruct button under the edit profile menu.`
   *   ![youdidit](/Photos/pimpmyprofile.png)
 
+Why does it look all funky? `set your terminal size to this.`
 
+  - ![size](/Photos/size_requirement.png)
+
+  136 x 33
