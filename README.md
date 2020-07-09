@@ -81,7 +81,7 @@ During the Pandemic of 2020 Netaly and Francisco were involved in a coding Bootc
       * Present any code you would like to highlight.
 * Write a blog post about the project and process.
 
-  🎊 We've made it to the end of Mod 1, but this we are just getting started  🎊
+  🎊 We've made it to the end of Mod 1, but we are just getting started  🎊
 
 ---
 
