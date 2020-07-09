@@ -1,6 +1,6 @@
 
 class Main
-    attr_accessor :prompt, :user
+    attr_accessor :prompt, :user, :joke, :lesson
 
     def initialize
         @prompt = TTY::Prompt.new(active_color: :yellow)
@@ -74,9 +74,10 @@ class Main
         when "Looking for Mischief" 
             #joke_method
             puts 'joke jokes jokes' 
+            binding.pry
             Joke.joke_interface(user_instance)
             Main.bmo
-            user_instance.display_profile
+            user.display_profile
         when "Looking to update"
             #profile_edit
             puts '~~~~~You have choosen to "Pimp my Profile"~~~~'.blue.on_yellow

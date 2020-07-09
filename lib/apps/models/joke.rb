@@ -2,6 +2,7 @@ class Joke < ActiveRecord::Base
     has_many :likes, through: :users
     has_many :comments, through: :users
     @@prompt = TTY::Prompt.new(active_color: :yellow )
+    attr_accessor :main, :user
     def self.prompt
         @@prompt 
     end
