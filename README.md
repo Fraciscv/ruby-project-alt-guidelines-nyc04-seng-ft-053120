@@ -27,7 +27,7 @@ Join our multipurpose app / movement.
   - It does anything and everything, you just have to imagine it, code it in and it might work. 
 
 ## Our Story
-During the Pandemic of 2020 Netaly and Francisco were involved in a coding Bootcamp which changed their lives IV ever!!!  On a warm evening in Netaly's Garage, while they were getting ready to crack open a 24 case of Coronas.  They discussed the idea for an app, which would help them take over the world.
+During the Pandemic of 2020 Netaly and Francisco were involved in a coding Bootcamp which changed their lives IV ever!!!  One warm evening, in Netaly's Garage, while they were getting ready to crack open a 24 case of Coronas.  They discussed the idea for an app, which would help them take over the world.
 
 "We had to start somewhere ... jokes and lessons were what we agreed on." Francisco
 
