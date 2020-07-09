@@ -1,4 +1,4 @@
-User.destroy_all
+ User.destroy_all
  Comment.destroy_all
  Joke.destroy_all
  Lesson.destroy_all
@@ -35,13 +35,36 @@ j5 = Joke.create(content: "Just keep calm, code on, and Blindly.Pray", genre: "C
 
 #create lessons
 #title, summary, location
-lesson1 = Lesson.create(title:"Super Lab", summary: "Define two classes, one of which inherits from another.")
-lesson2 = Lesson.create(title:"Advanced Class Methods Lab", summary:"Build custom classes constructors.")
-lesson3 = Lesson.create(title:"OO Cash Register", summary:"Build a classes with instance methods.")
-lesson4 = Lesson.create(title:"Pigeon Organizer Lab", summary:"Iterate over nested hashes. Sort and manipulate hashes")
-lesson5 = Lesson.create(title:"Arrays of Hashes Lab", summary:"Recognize vocabulary term: array of hashes (AoH)")
-lesson6 = Lesson.create(title:"Green Grocer Part 1", summary:"Translate data from AoH to AoH")
-lesson7 = Lesson.create(title:"Green Grocer Part 2", summary:"Perform calculations based on AoH data")
+l1 = Lesson.create(title: "Classes and Instances Lab",summary: "Instantiate instances of a class.")
+l2 = Lesson.create(title: "Instance Methods Lab",summary: "Build instance methods for the class.")
+l3 = Lesson.create(title: "Instance Variables",summary: "Describe how instance variables give objects attributes and properties.")
+l4 = Lesson.create(title: "Object Initialization Lab",summary: "Set instance variable attributes from initialize.")
+l5 = Lesson.create(title: "Object Attributes Lab",summary: "Create object properties using methods and instance variables")
+l6 = Lesson.create(title: "Meowing Cat",summary: "Use macros to create setter and getter methods")
+l7 = Lesson.create(title: "OO Email Parser",summary: "Practice defining a class and using an attr_accessor to create setter and getter methods")
+l8 = Lesson.create(title: "OO Basics" ,summary: "This lab will walk you, step by step, through the basics of programming a simple Book class.")
+l9 = Lesson.create(title: "OO School Domain" ,summary: "Define the concept of a domain model.")
+l10 = Lesson.create(title: "OO Cash Register" ,summary: "Use instance methods to track information pertinent to an instance of a class.")
+l11 = Lesson.create(title: "OO Counting Sentences" ,summary: "Learn about monkey patching." )
+l12 = Lesson.create(title: "Class Variables and Methods Lab" ,summary: "Use class variables to keep track of data pertaining to a class.")
+l13 = Lesson.create(title: "OO Basics with Class Constants" ,summary: "Know when to use attr_accessor VS creating the methods yourself")
+l14 = Lesson.create(title: "OO Person Lab" ,summary: "Gain proficiency instantiating a class")
+l15 = Lesson.create(title: "Advanced Class Methods Lab" ,summary: "Build custom class constructors.")
+l16 = Lesson.create(title: "Puppy Lab" ,summary: "Write a class method to access the list of all instances of a class, stored in a class variable.")
+l17 = Lesson.create(title: "Belongs to Object Lab" ,summary: "Write classes that are related via the 'belongs to' relationship.")
+l18 = Lesson.create(title: "Has Many Object Lab" ,summary: "Build methods that use the has many/belongs to relationship between two classes.")
+l19 = Lesson.create(title: "Collaborating Objects Lab" ,summary: "Build classes that interact with one another through associations and behavior.")
+l20 = Lesson.create(title: "OO My Pets" ,summary: "Build classes that produce objects that interact with one another through associations and behavior.")
+l21 = Lesson.create(title: "OO Banking" ,summary: "Use TDD to code two classes that interact with each other.")
+l22 = Lesson.create(title: "Has Many Objects Through" ,summary: "Understand Has-Many-Through relationships")
+l23 = Lesson.create(title: "Has Many Objects Through Lab" ,summary: "Write methods that use the 'has-many-through' relationship to deliver information on related objects.")
+l24 = Lesson.create(title: "OO Kickstarter" ,summary: "Build classes that produce objects that relate to one another.")
+l25 = Lesson.create(title: "Intro to Inheritance" ,summary: "Learn about inheritance in object oriented Ruby.")
+l26 = Lesson.create(title: "Intro to Inheritance Lab" ,summary: "Define classes that inherit from a shared parent, or super, class.")
+l27 = Lesson.create(title: "Intro to Modules" ,summary: "Learn about modules––another way to lend functionality across classes.")
+l28 = Lesson.create(title: "Intro to Modules Lab" ,summary: "Recognize 'code smells' that indicate the need for refactoring.")
+l29 = Lesson.create(title: "Super Lab" ,summary: "Define methods in the child class that use the super keyword to inherit from and augment methods in the parent class.")
+l30 = Lesson.create(title: "Mass Assignment Lab" ,summary: "Use keyword arguments to define an initialize method.")
 
 
 #create comments 
@@ -49,8 +72,8 @@ lesson7 = Lesson.create(title:"Green Grocer Part 2", summary:"Perform calculatio
 comment1 = Comment.create(content: "This joke was super funny!", user_id:francisco.id, joke_id: j3.id)
 comment2 = Comment.create(content: "This joke was lame!", user_id:netaly.id, joke_id: j2.id)
 comment3 = Comment.create(content: "Amazing!!!!", user_id:donat.id, joke_id: j3.id)
-comment4 = Comment.create(content: "I had trouble with this lab, but here is a link that helped me out google.com", user_id:tricia.id, lesson_id: lesson6.id)
-comment5 = Comment.create(content: "nothing sticks, so i took a break", user_id:barbara.id, lesson_id: lesson7.id)
+comment4 = Comment.create(content: "I had trouble with this lab, but here is a link that helped me out google.com", user_id:tricia.id, lesson_id: l25.id)
+comment5 = Comment.create(content: "nothing sticks, so i took a break", user_id:barbara.id, lesson_id: l9.id)
 comment6 = Comment.create(content: "this joke was super good!", user_id:karem.id, joke_id: j2.id)
 comment7 = Comment.create(content: "this joke was super!", user_id:manon.id, joke_id: j3.id)
 
