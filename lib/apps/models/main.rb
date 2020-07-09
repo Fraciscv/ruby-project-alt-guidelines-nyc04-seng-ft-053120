@@ -3,7 +3,7 @@ class Main
     attr_accessor :prompt, :user
 
     def initialize
-        @prompt = TTY::Prompt.new(active_color: :yellow )
+        @prompt = TTY::Prompt.new(active_color: :yellow)
     end
 
     def self.welcome

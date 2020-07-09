@@ -19,15 +19,18 @@ class Joke < ActiveRecord::Base
         when "Suprise me ~~~"
             # method generates a random joke
             # disply comments and option to comment
-           
+           Main.bmo
            joke = self.random_joke
-          
-           joke.display_joke
+           joke.display_joke(user_instance)
           
            
         when "Show me what you got!"
             # offers geres 
             # shows jokes based off those options
+            user_input = self.prompt.select("Choose: ", self.all_the_jokes_genres, filter: true)
+            # search by joke genre and display it 
+            joke_array = self.find_by_genre(user_input)
+            self.deploy_the_jokes(joke_array, user_instance)
         else
             newmain = Main.new()
             newmain.users_interface(user_instance)
@@ -40,22 +43,36 @@ class Joke < ActiveRecord::Base
        
        joke
     end
-
-    def display_joke
-        
-        joke_table = TTY::Table.new ["Joke","likes"],[[self.content,"   "]]
+    def self.all_the_jokes_genres
+        Joke.all.map do |joke_inst|
+            joke_inst.genre
+        end.uniq
+    end
+    def self.find_by_genre(search_genre)
+        jokes = self.all.where(genre: search_genre) 
+    end
+    def self.deploy_the_jokes(array_of_jokes,user_instance)
+        array_of_jokes.each do |joke_instance|
+            joke_instance.display_joke(user_instance)
+        end
+    end
+    def display_joke(user_instance)
+        Main.bmo
+        joke_table = TTY::Table.new ["Your Joke is :"],[[self.content]]
 
         puts joke_table.render(:unicode, alignments: [:center, :center], padding: [1,1,0,1])
+        self.users_next_joke(user_instance)
     end
 
     def users_next_joke(user_instance)
-        users_input = self.prompt.select("What would you like to do next?", ["Give a comment!!", "Take me to Jokes main"])
+        users_input = self.class.prompt.select("What would you like to do next?", ["Give a comment!!", "Take me to Jokes main"])
         if users_input == "Give a comment!!"
             # make a comment from user
         else users_input == "Take me to Jokes main"
             # go back to jokes main interface
-            newmain = Main.new()
-            newmain.users_interface(self)
+            Main.bmo
+            
+            Joke.joke_interface(user_instance)
         end
     end
 end

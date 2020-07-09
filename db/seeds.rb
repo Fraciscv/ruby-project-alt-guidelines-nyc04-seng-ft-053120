@@ -20,13 +20,18 @@ karem = User.create(user_name: "Teflon", name: "Karem Johanson" ,password: "1234
 #create jokes
 #content, genre, like_id
 joke1 = Joke.create(content: "Chuck Norris threw a grenade and killed 50 people, then it exploded.", genre: "Chuck Norris Fact")
-joke2 = Joke.create(content: "An SQL query goes into a bar, walks up to two tables, and asks, “Can I join you?", genre: "SQL Joke")
+joke2 = Joke.create(content: "An SQL query goes into a bar, walks up to two tables, and asks, “Can I join you?", genre: "Code: Joke")
 joke3 = Joke.create(content: "Two bytes meet. The first byte asks, “Are you ill?”
-The second byte replies, “No, just feeling a bit off.", genre: "Programing Joke")
+The second byte replies, “No, just feeling a bit off.", genre: "Code: Joke")
 joke4 = Joke.create(content: "When Chuck Norris is web surfing websites get the message “Warning: Internet Explorer has deemed this user to be malicious or dangerous. Proceed?", genre: "Chuck Norris Fact")
 joke5 = Joke.create(content: "Chuck Norris writes code that optimizes itself.", genre: "Chuck Norris Fact")
 joke6 = Joke.create(content: "All browsers support the hex definitions #chuck and #norris for the colors black and blue.", genre: "Chuck Norris Fact")
 joke7 = Joke.create(content: "Chuck Norris’s beard can type 140 wpm.", genre: "Chuck Norris Fact")
+j1 = Joke.create(content: "A SQL query walks up to two tables in a restaurant and asks: 'Mind if i join you?'", genre: "Code: Joke")
+j2 = Joke.create(content: "3 Database SQL walked into a noSQL bar they soon walk out.......... Because they couldn't find a table.", genre: "Code: Joke")
+j3 = Joke.create(content: "99 bugs in the code, 99 bugs in the code! Take one down, patch it around. 127 bugs in the code.", genre: "Code: Joke")
+j4 = Joke.create(content: "The only programming joke I know......... is my code", genre: "Code: Joke")
+j5 = Joke.create(content: "Just keep calm, code on, and Blindly.Pray", genre: "Code: Joke")
 
 #create lessons
 #title, summary, location
@@ -41,13 +46,13 @@ lesson7 = Lesson.create(title:"Green Grocer Part 2", summary:"Perform calculatio
 
 #create comments 
 #user_id, joke_id, like_id, content, posted
-comment1 = Comment.create(content: "This joke was super funny!", user_id:francisco.id, joke_id: joke1.id)
-comment2 = Comment.create(content: "This joke was lame!", user_id:netaly.id, joke_id: joke2.id)
-comment3 = Comment.create(content: "Amazing!!!!", user_id:donat.id, joke_id: joke3.id)
+comment1 = Comment.create(content: "This joke was super funny!", user_id:francisco.id, joke_id: j3.id)
+comment2 = Comment.create(content: "This joke was lame!", user_id:netaly.id, joke_id: j2.id)
+comment3 = Comment.create(content: "Amazing!!!!", user_id:donat.id, joke_id: j3.id)
 comment4 = Comment.create(content: "I had trouble with this lab, but here is a link that helped me out google.com", user_id:tricia.id, lesson_id: lesson6.id)
 comment5 = Comment.create(content: "nothing sticks, so i took a break", user_id:barbara.id, lesson_id: lesson7.id)
-comment6 = Comment.create(content: "this joke was super good!", user_id:karem.id, joke_id: joke4.id)
-comment7 = Comment.create(content: "this joke was super terrible!", user_id:manon.id, joke_id: joke5.id)
+comment6 = Comment.create(content: "this joke was super good!", user_id:karem.id, joke_id: j2.id)
+comment7 = Comment.create(content: "this joke was super!", user_id:manon.id, joke_id: j3.id)
 
 #create likes
 #user_id, comment_id, joke_id, like_counter

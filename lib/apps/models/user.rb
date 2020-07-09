@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
         #Main.bmo
         random_usernames = [
             "PowerpuffGirl279", "WedgeBiggs007", "AlveeRules", "YogaPosePretzel", "NoForksGiven","KanyeForPresident","CoffeeDaddy", "HobbitFeet429", "Mordor69", "Raffyisbae", "CharmanderCHARBOK", "TeenageMutantNinjaSquirtles", "Raffyisagoodboy", "RaffyAteMyLab", "ChuckNorrisLover"].sample
-        prompt = TTY::Prompt.new
+        prompt = TTY::Prompt.new(active_color: :yellow)
         username = prompt.ask("What would you like your username to be?")
         if User.find_by(user_name: username)
             puts "~~~~~~Sorry that user name was taken, how about you try: #{random_usernames}~~~~~"
@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
      
     def self.log_someone_in
         #Main.bmo
-        prompt = TTY::Prompt.new
+        prompt = TTY::Prompt.new(active_color: :yellow)
         username = prompt.ask("what is your username?")
         pass = self.password_prompt
             if User.find_by(user_name: username) && User.find_by(password: pass)
@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
 
     def self.create_a_new_user
         #
-        prompt = TTY::Prompt.new
+        prompt = TTY::Prompt.new(active_color: :yellow)
         username = self.check_user
         pass = self.password_prompt
         cohort = prompt.select("What Cohort do you belong to", [
@@ -93,7 +93,7 @@ class User < ActiveRecord::Base
     end
 
     def self.edit_my_profile(user_instance)
-        prompt = TTY::Prompt.new 
+        prompt = TTY::Prompt.new(active_color: :yellow)
         mutables = ["My Name", "Cohort", "Bio","Change Password", "Self-Destruct".colorize(:red)]
         users_choice = prompt.select("What would you like to change?",mutables)
         case users_choice 
@@ -123,7 +123,7 @@ class User < ActiveRecord::Base
     end
 
     def prompt_for_users_name
-        prompt = TTY::Prompt.new 
+        prompt = TTY::Prompt.new(active_color: :yellow) 
         users_input = prompt.ask("Well what would like to be called?")
         puts "Congrats Your Name Is Now #{users_input}"
         self.update_and_display(name: users_input) 
@@ -132,7 +132,7 @@ class User < ActiveRecord::Base
 
     def prompt_for_cohort
         
-        prompt = TTY::Prompt.new 
+        prompt = TTY::Prompt.new(active_color: :yellow)
         prompt.yes?("Are you betraying your cohort? You can answer honestly... I won't judge. ;D ")
         cohort = prompt.select("What Cohort do you belong to", 
         [
@@ -156,7 +156,7 @@ class User < ActiveRecord::Base
     end
 
     def prompt_for_bio
-        prompt = TTY::Prompt.new 
+        prompt = TTY::Prompt.new(active_color: :yellow)
         new_bio = prompt.ask("Type it up what's your story?")
         self.update_and_display(bio: new_bio)
     end
