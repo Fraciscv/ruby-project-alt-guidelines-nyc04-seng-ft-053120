@@ -90,6 +90,8 @@ class Main
         when "EXIT"
            self.new_user   
         else
+            sleep(15)
+            puts "Hack the Gibson! type 'User.all'"
             binding.pry
             #bmo_dance_party
             puts 'my name is BMO! nice to meet you!'
