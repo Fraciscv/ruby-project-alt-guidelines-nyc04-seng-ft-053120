@@ -3,7 +3,7 @@ class Main
     attr_accessor :prompt, :user
 
     def initialize
-        @prompt = TTY::Prompt.new
+        @prompt = TTY::Prompt.new(active_color: :yellow )
     end
 
     def self.welcome
@@ -72,9 +72,10 @@ class Main
         case user_input   
         when "Looking for Mischief" 
             #joke_method
-            puts 'joke jokes jokes'
+            puts 'joke jokes jokes' 
+            Joke.joke_interface(user_instance)
             Main.bmo
-            user.display_profile
+            user_instance.display_profile
         when "Looking to update"
             #profile_edit
             puts '~~~~~You have choosen to "Pimp my Profile"~~~~'.blue.on_yellow
@@ -97,7 +98,7 @@ class Main
     end
 
     def new_user
-        # by calling the class method of welcome this stays while the rest can refresh
+       
         system ('clear')
         new_interface = Main.new()
         Main.welcome
