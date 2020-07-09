@@ -1,31 +1,56 @@
 Module One Final Project
 ========================
+```ruby
+                                          _       _    _                        _       _    _               
+                                        / /\    / /\ /\_\                     / /\    / /\ /\_\             
+                                       / / /   / / // / / *       _          / / / * / / // / /         _   
+                      *               / /_/   / / / \ \ \__      /\_\       / /_/   / / / \ \ \__   *  /\_\ 
+                                     / /\ \__/ / /   \ \___\    / / /      / /\ \__/ / /   \ \___\    / / / 
+                               *    / /\ \___\/ /     \__  /   / / /      / /\ \___\/ /     \__  /   / / /  
+                                   / / /\/___/ /      / / /   / / /      / / /\/___/ /      / / /   / / /   
+                                  / / /   / / /      / / /   / / /   *  / / /   / / /      / / /   / / /    
+                                 / / /   / / /      / / /___/ / /      / / /   / / /      / / /___/ / /     
+                                / / /   / / /    * / / /____\/ /      / / /   / / /  *   / / /____\/ /   *                              
+                *               \/_/    \/_/       \/_________/       \/_/    \/_/       \/_________/        
+```
 
-Congratulations, you're at the end of module one! You've worked crazy hard to get here and have learned a ton.
-
-For your final project, you'll be building a Command Line Application.
 
 ---
 
-## Goals (Minimum Requirements)
+## Welcome to HUHU, a Flatiron Lesson review (Minimum Requirements)
 
-You will be building a **Command Line CRUD App** that uses a database to persist information. The goal of which is to demonstrate all of the skills that you've learned in module one:
 
-- Ruby
-- Object Orientation
-- Relationships (via ActiveRecord)
-- Problem Solving (via creating a Command Line Interface (CLI))
+- a computer
+- with a terminal
+
+## Our Story
+
+## How to install:
+- once you've downloaded the repository
+- open up your terminal and cd into the directory
+- type 'bundle install'
+- type 'rake db:migrate'
+- type 'rake db:seed'
+- type 'rake db:migrate:status'
+
+## How to use:
+* `Restaurant`, `User`, `Review`: to load the app save it to your directory and run it using the run file.  
+You can type 'ruby bib/run.rb' when you are in the directory and voila!!!
+* You will be prompeted with two options
+```ruby
+Log in. # if you already have an account with us. click the log in.
+Register # if you're new here. click the register
+```
+* `Loging in`: 
+  * Type in your user name
+  * Type in your passoword.(if you accidentally click here and you don't have an account hold 'Control + c' to force quit out and try registering.)
+* `Registering`: follow the simple instructions, create a username, create a password, choose a cohort.
 
 Your **minimum requirements** for this project are to build a Command Line App that:
+[Links)](https://en.wikipedia.org/wiki/Minimum_viable_product)
+![mvp](https://blog.crisp.se/wp-content/uploads/2016/01/mvp.png)
 
-1. Contains at least three models with corresponding tables, including a join table.
-2. Accesses a Sqlite3 database using ActiveRecord.
-3. Has a CLI that allows users to interact with your database as defined by your _user stories_ (minimum of four; one for each CRUD action).
-4. Uses good OO design patterns. You should have separate models for your runner and CLI interface.
 
----
-
-## Project Overview (Timeline)
 
 ### Phase 1: The Setup
 
@@ -37,9 +62,7 @@ Do not begin coding until you have your pitch approved by an instructor. Do not 
 
 Your **first goal** should be to decide on your models and determine the relationships between them. You **must have a minimum of three models consisting of at least _one_ many-to-many relationship.** Here are some ideas:
 
-* `Restaurant`, `User`, `Review`: (Yelp domain) A restaurant has many users and a user has many restaurants; reviews belongs to restaurant and to user.
-* `Movie`, `Actor`, `Role`: (IMDb domain) A movie has many actors and an actor has many movies; roles belongs to movie and to actor.
-* `Pizza`, `Topping`, `PizzaTopping`: (Domino's domain) A pizza has many toppings and a topping has many pizzas; pizza_toppings belongs to pizza and to topping.
+
 
 Whiteboard out your ideas and think about what columns you'll want in the corresponding tables, including foreign keys.
 
