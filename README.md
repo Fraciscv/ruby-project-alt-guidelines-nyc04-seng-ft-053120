@@ -19,7 +19,7 @@ Module One Final Project
 
 # `Welcome to HUHU, `
 Having trouble getting the green light on those labs?
-Join our multipurpose.
+Join our multipurpose app / movement.
   ## Things it can do.
   - Allows you to write reviews on applications and read other users reviews.
   - Has a joke function which lets you search for jokes by genre ex. Coding jokes, Chuck Norris Jokes.
