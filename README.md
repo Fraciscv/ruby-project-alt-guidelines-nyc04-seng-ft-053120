@@ -55,9 +55,9 @@ During the Pandemic of 2020 Netaly and Francisco were involved in a coding Bootc
     ![success](/Photos/migration_success.png)
     - `rake db:seed`  - this will create random seed data for the app to work.(it shouldn't give you any errors.)
 
-****_Whaterver YOU DO, do not, touch the SCHEMA!_**
+****_Whatever YOU DO, do not, touch the SCHEMA!_**
 
-4. you are ready to run the app, type this in and it should load your HUHU.app
+4. you are ready to run the app, type this in into the terminal and it should load your HUHU.app
   -  `ruby bin/run.rb`
 
                                 **VOILA!!**
