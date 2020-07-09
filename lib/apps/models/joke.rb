@@ -2,6 +2,7 @@ class Joke < ActiveRecord::Base
     has_many :likes, through: :users
     has_many :comments, through: :users
     @@prompt = TTY::Prompt.new(active_color: :yellow )
+    attr_accessor :main, :user
     def self.prompt
         @@prompt 
     end
@@ -17,6 +18,7 @@ class Joke < ActiveRecord::Base
         users_input = self.prompt.select("Welcome to Jokes, what would you like to do?", options )
         case users_input
         when "Suprise me ~~~"
+            binding.pry
             # method generates a random joke
             # disply comments and option to comment
            Main.bmo

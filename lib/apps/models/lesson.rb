@@ -18,6 +18,7 @@ class Lesson < ActiveRecord::Base
              #user.display_profile
         else interface == "Main Menu"
             newmain = Main.new()
+            binding.pry
             newmain.users_interface(user_instance)
          end
     
