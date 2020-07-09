@@ -9,7 +9,7 @@ class Main
     def self.welcome
         puts '              
         
-        
+                                                         
                                           _       _    _                        _       _    _               
                                         / /\    / /\ /\_\                     / /\    / /\ /\_\             
                                        / / /   / / // / / *       _          / / / * / / // / /         _   
@@ -19,13 +19,15 @@ class Main
                                    / / /\/___/ /      / / /   / / /      / / /\/___/ /      / / /   / / /   
                                   / / /   / / /      / / /   / / /   *  / / /   / / /      / / /   / / /    
                                  / / /   / / /      / / /___/ / /      / / /   / / /      / / /___/ / /     
-                                / / /   / / /    * / / /____\/ /      / / /   / / /  *   / / /____\/ /   *  
-                *               \/_/    \/_/       \/_________/       \/_/    \/_/       \/_________/       
-                                                                                                              '.colorize(:yellow)
+                                / / /   / / /    * / / /____\/ /      / / /   / / /  *   / / /____\/ /   *                              
+                *               \/_/    \/_/       \/_________/       \/_/    \/_/       \/_________/                               '.colorize(:yellow)    
+                                                                                   puts 'Version  1.0.0                             '.colorize(:blue)
 
-                                                                                 
-       puts '                   ============================== a Netaly and Francisco production==========
-                                                     Welcome to our application!                                     '.yellow.blink
+    sleep(0.25)                                                                        
+       puts '                        ============================== a Netaly and Francisco production ==========                    '.white
+    sleep(0.20)   
+       puts '                      ============================== Welcome to our application!=================                      '.blue
+                                                    
         # font = TTY::Font.new(:block)
         # puts font.write("Welcome" "to\n" "our" "application", letter_spacing: 2)
 
@@ -52,14 +54,13 @@ class Main
         user_instance[0]
     
     end
-
+#clearn screen helper method
     def self.bmo
         system ('clear')
         Main.welcome 
     end
 
     def users_interface(user_instance)
-       
         activity_options = [
             "Looking for Mischief",
             "Looking to update",
@@ -85,16 +86,17 @@ class Main
             user.display_profile
         when "Seeking Knowledge"
             #lesson_review
-            Lesson.lesson_interface(user_instance)
-            
+            Lesson.lesson_interface(user_instance)     
         when "EXIT"
            self.new_user   
         else
-            sleep(15)
-            puts "Hack the Gibson! type 'User.all'"
+            spinner = TTY::Spinner.new("[:spinner] Hacking the Gibson ...", format: :pulse_2)
+            spinner.auto_spin # Automatic animation with default interval
+            sleep(5) # Perform task
+            spinner.stop("Step 1. type 'User.all' to hack the Gibson \nStep 2. type 'q' then'exit' to kill the worm.") # Stop animation
             binding.pry
             #bmo_dance_party
-            puts 'my name is BMO! nice to meet you!'
+            puts "You Hacked the Gibson!".red.blink
         end
         # user.display_profile
     end

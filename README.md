@@ -113,7 +113,17 @@ Create your database and migrations in the terminal (keeping in mind that you ha
 Now is a great time to open up your console in the terminal and make sure everything's working properly. Your database is empty at this point, so start by creating a new row in your `users` table. For the Yelp example, we'd do something like this:
 
 ```ruby
-mike = User.create(name: "Mike")
+                                          _       _    _                        _       _    _               
+                                        / /\    / /\ /\_\                     / /\    / /\ /\_\             
+                                       / / /   / / // / / *       _          / / / * / / // / /         _   
+                      *               / /_/   / / / \ \ \__      /\_\       / /_/   / / / \ \ \__   *  /\_\ 
+                                     / /\ \__/ / /   \ \___\    / / /      / /\ \__/ / /   \ \___\    / / / 
+                               *    / /\ \___\/ /     \__  /   / / /      / /\ \___\/ /     \__  /   / / /  
+                                   / / /\/___/ /      / / /   / / /      / / /\/___/ /      / / /   / / /   
+                                  / / /   / / /      / / /   / / /   *  / / /   / / /      / / /   / / /    
+                                 / / /   / / /      / / /___/ / /      / / /   / / /      / / /___/ / /     
+                                / / /   / / /    * / / /____\/ /      / / /   / / /  *   / / /____\/ /   *                              
+                *               \/_/    \/_/       \/_________/       \/_/    \/_/       \/_________/        
 ```
 
 You should see the user inserted into your database. Cool! Now let's test our relationships:
@@ -374,6 +384,10 @@ Can you think of any other scenarios? How would you gracefully handle such scena
 ---
 
 ### Phase 6: Presentation
+
+
+Hello everyone, and welcome to our Mod - 01 CLi application.
+
 
 It's time to show off your creation to the world! Things you might want to do are:
 
