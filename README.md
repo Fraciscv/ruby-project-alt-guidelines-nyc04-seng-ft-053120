@@ -22,14 +22,16 @@ Having trouble getting the green light on those labs?
 Join our multipurpose app / movement.
   ## Things it can do.
   - Allows you to write reviews on applications and read other users reviews.
-  - Has a joke function which lets you search for jokes by genre ex. Coding jokes, Chuck Norris Jokes.
+  - Has a joke function which lets you search for jokes by genre **i.e.** _Coding jokes, Chuck Norris Jokes._
   - Edit your profile using our handy dandy editing tab.
   - It does anything and everything, you just have to imagine it, code it in and it might work. 
 
 ## Our Story
-During the Pandemic of 2020 Netaly and Francisco were involved in a coding Bootcamp which changed their lives IV ever!!!  On a warn evening in Netaly's Garage, while they were getting ready to crack open a 24 case of coronas, they discused an idea for an app, which would help them take over the world.
+During the Pandemic of 2020 Netaly and Francisco were involved in a coding Bootcamp which changed their lives IV ever!!!  On a warn evening in Netaly's Garage, while they were getting ready to crack open a 24 case of Coronas.  They discused an idea for an app, which would help them take over the world.
 
 "We had to start somewhere and jokes and lessons was what we agreed on." Francisco
+
+"This never happened" Netaly
 
 
 
