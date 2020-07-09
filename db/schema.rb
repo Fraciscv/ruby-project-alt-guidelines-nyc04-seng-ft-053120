@@ -18,18 +18,21 @@ ActiveRecord::Schema.define(version: 2020_07_04_214136) do
     t.integer "like_id"
     t.text "content"
     t.datetime "posted"
+    t.integer "lesson_id"
   end
 
   create_table "jokes", force: :cascade do |t|
     t.text "content"
     t.string "genre"
     t.integer "like_id"
+    t.integer "comment_id"
   end
 
   create_table "lessons", force: :cascade do |t|
     t.string "title"
     t.text "summary"
     t.string "location"
+    t.integer "comment_id"
   end
 
   create_table "likes", force: :cascade do |t|

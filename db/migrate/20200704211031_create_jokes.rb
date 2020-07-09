@@ -4,6 +4,7 @@ class CreateJokes < ActiveRecord::Migration[5.2]
       t.text :content
       t.string :genre
       t.integer :like_id
+      t.integer :comment_id
       
       t.timestamp 
     end
