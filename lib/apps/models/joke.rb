@@ -18,7 +18,6 @@ class Joke < ActiveRecord::Base
         users_input = self.prompt.select("Welcome to Jokes, what would you like to do?", options )
         case users_input
         when "Suprise me ~~~"
-            binding.pry
             # method generates a random joke
             # disply comments and option to comment
            Main.bmo
