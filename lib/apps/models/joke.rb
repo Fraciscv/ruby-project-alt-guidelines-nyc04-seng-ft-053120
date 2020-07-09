@@ -82,7 +82,6 @@ class Joke < ActiveRecord::Base
     def add_a_comment(user_instance)
         users_input = self.class.prompt.ask("What are your thoughts?")
         new_comment = Comment.create(content:users_input, joke_id: self.id, user_id: user_instance.id)
-        binding.pry
         self.display(new_comment)
     end
 
