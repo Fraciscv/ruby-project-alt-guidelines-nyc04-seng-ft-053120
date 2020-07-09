@@ -27,9 +27,9 @@ Join our multipurpose app / movement.
   - It does anything and everything, you just have to imagine it, code it in and it might work. 
 
 ## Our Story
-During the Pandemic of 2020 Netaly and Francisco were involved in a coding Bootcamp which changed their lives IV ever!!!  On a warn evening in Netaly's Garage, while they were getting ready to crack open a 24 case of Coronas.  They discused an idea for an app, which would help them take over the world.
+During the Pandemic of 2020 Netaly and Francisco were involved in a coding Bootcamp which changed their lives IV ever!!!  On a warm evening in Netaly's Garage, while they were getting ready to crack open a 24 case of Coronas.  They discussed the idea for an app, which would help them take over the world.
 
-"We had to start somewhere and jokes and lessons was what we agreed on." Francisco
+"We had to start somewhere ... jokes and lessons were what we agreed on." Francisco
 
 "This never happened" Netaly
 
@@ -48,14 +48,14 @@ During the Pandemic of 2020 Netaly and Francisco were involved in a coding Bootc
 
 ## How to install:
 1. download the repository
-2. open it up on the terminal and go into directory(if you are below the age of 18 consult your parents or guardians on how to do this...  or google it.)
+2. open it up on the terminal and go into the directory(if you are below the age of 18 consult your parents or guardians on how to do this...  or google it.)
 3. type in the following command into the terminal.
     - `rake db:migrate`  -  this will generate a connection between the Classes and the Database.
     - `rake db:migrate:status`  -  this will check the status of your migration.  it shold look like this.
     ![success](/Photos/migration_success.png)
     - `rake db:seed`  - this will create random seed data for the app to work.(it shouldn't give you any errors.)
 
-****_Whatever YOU DO, do not, touch the SCHEMA!_**
+****_Whatever YOU DO, do not touch the SCHEMA!_**
 
 4. you are ready to run the app, type this in into the terminal and it should load your HUHU.app
   -  `ruby bin/run.rb`
@@ -67,8 +67,8 @@ During the Pandemic of 2020 Netaly and Francisco were involved in a coding Bootc
 
 ## How to use:
 - use the arrow keys to move up and down.
-- Register if it's your first time using the app. If you accidentally click on log in, use the super secret command `CONTROL + C`  to exit out of the app.
-- try using a username which already exists, the app will generate prompt you to try a different name and might suggest some good user names for you to try.
+- Register if it's your first time using the app. If you accidentally click on log in, use the super-secret command `CONTROL + C`  to exit out of the app.
+- try using a username that already exists, the app will generate prompt you to try a different name and might suggest some good user names for you to try.
 -update your profile by scrolling through the easy prompts.
     ![update](/Photos/I_was_zerocool.png)
     ![youdidit](/Photos/pimpmyprofile.png)
@@ -81,7 +81,7 @@ During the Pandemic of 2020 Netaly and Francisco were involved in a coding Bootc
 ---
 
 ## Common question
-How do I delete my account? `There is a self Destruct button under the edit profile menu.`
+How do I delete my account? `There is a Self Destruct button under the edit profile menu.`
   *   ![youdidit](/Photos/pimpmyprofile.png)
 
 Why does it look all funky? `set your terminal size to this.`
