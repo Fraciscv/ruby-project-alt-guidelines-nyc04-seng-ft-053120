@@ -72,7 +72,7 @@ class User < ActiveRecord::Base
     end
 
     def self.welcome_sign(user_instance)
-        puts "                                             ~~~~~ ⚉ Welcome #{user_instance.user_name} ⚉ ~~~~~                                   ".yellow    
+        puts "                                               ~~~~~ ⚉ Welcome #{user_instance.user_name} ⚉ ~~~~~                                   ".yellow    
         puts "                       :.:.:.:.:.:       Your password is  ▷▷▷▷#{user_instance.password}◁◁◁◁  don't lose it,        :.:.:.:.:.:           ".yellow
         puts "                              :.:.:.:.:.:      because we have no way of retrieving it for you...            :.:.:.:.:.:             ".yellow
         puts "                     :.:.:.:.:.:          OH!! and ummm, you now belong to us. #{user_instance.cohort}         :.:.:.:.:.:              ".yellow
@@ -81,7 +81,7 @@ class User < ActiveRecord::Base
 
     def self.password_prompt
         prompt = TTY::Prompt.new
-        heart = prompt.decorate(" ✿ ".colorize(:yellow))
+        heart = prompt.decorate(" ✿ ".colorize(:light_green))
 
         password = prompt.mask("What is your password?", mask: heart) 
         if password.length < 4

@@ -82,7 +82,7 @@ class Main
             user.display_profile
         when "Looking to update"
             #profile_edit
-            puts '        ~~~                            ~~~~~You have choosen to "Pimp my Profile"~~~~                          ~~~~'.light_yellow
+            puts '        ~~~                       ~~~~~You have choosen to "Pimp your Profile"~~~~                       ~~~~'.light_yellow
             
             User.edit_my_profile(user_instance)
             Main.bmo
@@ -96,7 +96,7 @@ class Main
             spinner = TTY::Spinner.new("[:spinner] Hacking the Gibson ...", format: :pulse_2)
             spinner.auto_spin # Automatic animation with default interval
             sleep(5) # Perform task
-            spinner.stop("Step 1. type 'User.all' to hack the Gibson \nStep 2. type 'q' then'exit' to kill the worm.") # Stop animation
+            spinner.stop("Step 1. type 'User.all' \nto hack the Gibson \nStep 2. type 'q' \nthen 'exit' to kill the worm.") # Stop animation
             binding.pry
             #bmo_dance_party
             puts "You Hacked the Gibson!".red.blink
