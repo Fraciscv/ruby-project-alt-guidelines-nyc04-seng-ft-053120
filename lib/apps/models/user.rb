@@ -72,10 +72,10 @@ class User < ActiveRecord::Base
     end
 
     def self.welcome_sign(user_instance)
-        puts "                                 ~~~~~  Welcome #{user_instance.user_name},  ~~~~~                               ".yellow    
-        puts "                     Your password is >>>#{user_instance.password}<<< don't lose it,                             ".yellow
-        puts "                         because we have no way of retrieving it for you... <3                                   ".yellow
-        puts "                       OH!! and ummm, you now belong to us. #{user_instance.cohort}                              ".yellow
+        puts "                                             ~~~~~ ⚉ Welcome #{user_instance.user_name} ⚉ ~~~~~                                   ".yellow    
+        puts "                       :.:.:.:.:.:       Your password is  ▷▷▷▷#{user_instance.password}◁◁◁◁  don't lose it,        :.:.:.:.:.:           ".yellow
+        puts "                              :.:.:.:.:.:      because we have no way of retrieving it for you...            :.:.:.:.:.:             ".yellow
+        puts "                     :.:.:.:.:.:          OH!! and ummm, you now belong to us. #{user_instance.cohort}         :.:.:.:.:.:              ".yellow
 
     end  
 
@@ -132,7 +132,7 @@ class User < ActiveRecord::Base
 
     def prompt_for_users_name
         prompt = TTY::Prompt.new(active_color: :yellow) 
-        users_input = prompt.ask("Well what would like to be called?")
+        users_input = prompt.ask(":.:.:.:.:.:Well what would like to be called?:.:.:.:.:.:")
         puts "Congrats Your Name Is Now #{users_input}"
         self.update_and_display(name: users_input) 
 
@@ -141,7 +141,7 @@ class User < ActiveRecord::Base
     def prompt_for_cohort
         
         prompt = TTY::Prompt.new(active_color: :yellow)
-        prompt.yes?("Are you betraying your cohort? You can answer honestly... I won't judge. ;D ")
+        prompt.yes?(":.:.:.:.:.:Are you betraying your cohort? You can answer honestly... I won't judge. ;D :.:.:.:.:.:")
         cohort = prompt.select("What Cohort do you belong to", 
         [
             "Pryñatas",
@@ -179,7 +179,7 @@ class User < ActiveRecord::Base
         system('cls')
         count = 0
         prompt = TTY::Prompt.new 
-        response = prompt.yes?("Are you sure you want to delete your data?")
+        response = prompt.yes?(":.:.:.:.:.::.:.:.:.:.:Are you sure you want to delete your data?:.:.:.:.:.::.:.:.:.:.:")
         if response == true
             puts "Loading your data"
             while count < 3 do
@@ -215,14 +215,25 @@ class User < ActiveRecord::Base
                                 @@@@@@@@@@%       &@////,//,@@@@@@@@@@@@@@@@@@@@@&/,.//*,/.     @@@@@@@@@@@@@@@@
                                 @@@@@@@@@@@@/     *////////,@@@@@@@@@@@@@@@@@@@@@,////////.   @@@@@@@@@@@@@@@@@@
                                 @@@@@@@@@@@@@@@@/  @*//////@@@@@@@@@@@@@@@@@@@@@@&///////,@@@@@@@@@@@@@@@@@@@@@@
-                                &&&&&&&&&&&%%%%%%###(((//((((#(///*/////**//*///****...///(((((((((#%%%&&&&&&&&&".colorize(:red)
+                                &&&&&&&&&&&%%%%%%###(((//((((#(///*/////**//*///****...///(((((((((#%%%&&&&&&&&&
+                                
+                                
+                                
+                                
+                                ".red.blink
                                 sleep(1)
                                 system('cls')
 
 
                                 system('cls')
 
-                          puts "@@@@@@@@@@@@@@@@@@(@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                          puts "
+                                    
+                          
+
+
+                                
+                                @@@@@@@@@@@@@@@@@@(@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
                                 @@@@@@@@@@@@@@@@@@/@@@@@@@@@&.     ./%@@@@@%*.&@@@@@@@@@@@@@@@@@@(@@@@@@@@@@@@@@
                                 @@@@@@@@@@@@@@@@@@%@@@@     ,@@@@@@@@@@@@@@@@@@@@@%#@@@@@@@@@@@@@&@@@@@@@@@@@@@@
                                 @@@@@@@@@@@@@@@@@@@,     &@@@/  ./@@@@@@@@@@@@@@@@@@        @@@@&@@@@@@@@@@@@@@@
@@ -253,7 +264,7 @@ class User < ActiveRecord::Base
                                 @@@@@@@@@@%       &@////,//,@@@@@@@@@@@@@@@@@@@@@&/,.//*,/.     @@@@@@@@@@@@@@@@
                                 @@@@@@@@@@@@/     *////////,@@@@@@@@@@@@@@@@@@@@@,////////.   @@@@@@@@@@@@@@@@@@
                                 @@@@@@@@@@@@@@@@/  @*//////@@@@@@@@@@@@@@@@@@@@@@&///////,@@@@@@@@@@@@@@@@@@@@@@
-                                &&&&&&&&&&&%%%%%%###(((//((((#(///*/////**//*///****...///(((((((((#%%%&&&&&&&&&"
+                                &&&&&&&&&&&%%%%%%###(((//((((#(///*/////**//*///****...///(((((((((#%%%&&&&&&&&&".light_black.blink
 
                                 sleep(1)
 

@@ -103,19 +103,19 @@ comment7 = Comment.create(content: "this joke was super!", user_id:manon.id, jok
 
 #create likes
 #user_id, comment_id, joke_id, like_counter
-likes1 = Like.create(like_counter: 20, joke_id: joke1.id)
-likes2 = Like.create(like_counter: 4, joke_id: joke2.id)
-likes3 = Like.create(like_counter: 2, joke_id: joke3.id)
-likes4 = Like.create(like_counter: 90, joke_id: joke4.id)
-likes5 = Like.create(like_counter: 30, joke_id: joke5.id)
-likes6 = Like.create(like_counter: 17, joke_id: joke6.id)
-likes7 = Like.create(like_counter: 500, joke_id: joke7.id)
+# likes1 = Like.create(like_counter: 20, joke_id: joke1.id)
+# likes2 = Like.create(like_counter: 4, joke_id: joke2.id)
+# likes3 = Like.create(like_counter: 2, joke_id: joke3.id)
+# likes4 = Like.create(like_counter: 90, joke_id: joke4.id)
+# likes5 = Like.create(like_counter: 30, joke_id: joke5.id)
+# likes6 = Like.create(like_counter: 17, joke_id: joke6.id)
+# likes7 = Like.create(like_counter: 500, joke_id: joke7.id)
 
 #create minions
 #user_id, minion_counter
-minion1 = Minion.create(user_id:francisco.id, minion_counter:99)
-minion2 = Minion.create(user_id:netaly.id, minion_counter:80982)
-minion3 = Minion.create(user_id:donat.id, minion_counter:89)
-minion4 = Minion.create(user_id:karem.id, minion_counter:9)
-minion5 = Minion.create(user_id:barbara.id, minion_counter:999)
+# minion1 = Minion.create(user_id:francisco.id, minion_counter:99)
+# minion2 = Minion.create(user_id:netaly.id, minion_counter:80982)
+# minion3 = Minion.create(user_id:donat.id, minion_counter:89)
+# minion4 = Minion.create(user_id:karem.id, minion_counter:9)
+# minion5 = Minion.create(user_id:barbara.id, minion_counter:999)
 

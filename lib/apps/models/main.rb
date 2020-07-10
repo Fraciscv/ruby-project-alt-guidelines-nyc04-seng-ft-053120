@@ -27,7 +27,7 @@ class Main
     sleep(0.25)                                                                        
        puts '                        ============================== a Netaly and Francisco production ==========                    '.white
     sleep(0.20)   
-       puts '                             ============================== Welcome to our application!=================                      
+       puts '                           ============================== Welcome to our application!=================                      
        
         '.blue
                                                     
@@ -37,7 +37,7 @@ class Main
     end
 
     def login_register_prompt
-        answer = prompt.select("Are you logging in or registering?", [
+        answer = prompt.select("               :.:.:.:.:.:.:.:.:.:.::.:.:.:.:.:Are you logging in or registering?:.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:".light_yellow, [
             "Login",
             "Register"
         ])
@@ -71,7 +71,7 @@ class Main
             "EXIT",
             "                   "
         ]
-        user_input = prompt.select("What are you looking for today?",activity_options )
+        user_input = prompt.select(":.:.:.:.:.:What are you looking for today?:.:.:.:.:.:",activity_options )
 
         case user_input   
         when "Looking for Mischief" 

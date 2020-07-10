@@ -13,6 +13,7 @@ class Joke < ActiveRecord::Base
         options = [
             "Suprise me ~~~",
             "Show me what you got!",
+            "All the Jokes",
             "Mischief Managed"
         ]
         users_input = self.prompt.select("Welcome to Jokes, what would you like to do?", options )
@@ -23,7 +24,7 @@ class Joke < ActiveRecord::Base
             Main.bmo
            joke = self.all.sample
            joke.display_joke(user_instance)
-            
+           joke.users_next_joke(user_instance)
         when "Show me what you got!"
             # offers geres 
             # shows jokes based off those options
@@ -34,6 +35,9 @@ class Joke < ActiveRecord::Base
             joke_instance.display_joke(user_instance)
             # self.deploy_the_jokes(joke_array, user_instance)
             joke_instance.users_next_joke(user_instance)
+        when "All the Jokes"
+            self.deploy_the_jokes(self.all, user_instance)
+            self.all.sample.users_next_joke(user_instance)
         else
             newmain = Main.new()
             newmain.users_interface(user_instance)
@@ -48,7 +52,7 @@ class Joke < ActiveRecord::Base
     def self.find_by_genre(search_genre)
         jokes = self.all.where(genre: search_genre) 
     end
-    def deploy_the_comments(user_instance)
+    def self.deploy_the_jokes(array_of_jokes,user_instance)
         array_of_jokes.each do |joke_instance|
             joke_instance.display_joke(user_instance)
         end
@@ -56,11 +60,8 @@ class Joke < ActiveRecord::Base
     end
     def display_joke(user_instance)
         joke_table = TTY::Table.new ["Your Joke is :"],[[self.content]]
-        
-
-        puts joke_table.render(:unicode,indent:10,alignments:[:center, :center],  width:100, padding: [0,1,0,1])
-        self.display(self.add_a_comment(user_instance), user_instance)
-        self.users_next_joke(user_instance)
+        puts joke_table.render(:unicode,indent:10,alignments:[:center, :center],  width:150)
+        # self.display(self.add_a_comment(user_instance), user_instance)
         
     end
     def users_next_joke(user_instance)
