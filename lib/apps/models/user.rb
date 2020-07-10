@@ -50,7 +50,26 @@ class User < ActiveRecord::Base
         puts "                     :.:.:.:.:.:          OH!! and ummm, you now belong to us.🧙🏼‍♂️🧝🏽‍♂️ #{user_instance.cohort}         :.:.:.:.:.:              ".yellow
 
     end  
-
+    def self.create_a_new_user
+        #
+        prompt = TTY::Prompt.new(active_color: :yellow)
+        username = self.check_user
+        pass = self.password_prompt
+        cohort = prompt.select("What Cohort do you belong to", [
+            "Pryñatas",
+            "404's", 
+            "The Git Up",
+            "NOLB",
+            "The Go Gitters",
+            "French Pry Cult"
+        ])
+        
+        new_user = User.create(user_name: username, password: pass, cohort: cohort, member_since: Time.now, status:"Online".green.blink)
+    
+        Main.bmo
+        self.welcome_sign(new_user)
+        new_user
+    end
     def self.password_prompt
         prompt = TTY::Prompt.new
         heart = prompt.decorate(" ✿ ".colorize(:light_green))
