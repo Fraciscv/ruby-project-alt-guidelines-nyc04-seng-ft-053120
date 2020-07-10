@@ -10,7 +10,7 @@ class Main
         puts '              
         
                                                          
-                                          _       _    _                        _       _    _               .
+                                          _       _    _                         _       _    _               .
                         .               / /\    / /\ /\_\           ✨         / /\    / /\ /\_\             
                                        / / /   / / // / / *       _      .   / / / * / / // / /         _   
                       *               / /_/   / / / \ \ \__      /\_\       / /_/   / / / \ \ \__   *  /\_\           🪐
@@ -29,7 +29,14 @@ class Main
     sleep(0.20)   
        puts '                           ============================== Welcome to our application!=================                      
        
-        '.blue
+       
+       ____^/\___^--____/\____O______________/\/\---/\___________---__________________/\/\---/\___________---___________________
+       /\^   ^  ^    ^                  ^^ ^                                       ^          ^       --- 
+             --           -            --  -      -         ---  __       ^              --  -      -         ---  __    
+       --  __                      ___--  ^  ^                         --  __    ^                         --  __   
+                 -            --  -      -         ---  __   __       ^              --  -     __       ^              --  -  
+     
+    '.blue
                                                     
         # font = TTY::Font.new(:block)
         # puts font.write("Welcome" "to\n" "our" "application", letter_spacing: 2)
@@ -37,7 +44,7 @@ class Main
     end
 
     def login_register_prompt
-        answer = prompt.select("               :.:.:.:.:.:.:.:.:.:.::.:.:.:.:.:Are you logging in or registering?:.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:".light_yellow, [
+        answer = prompt.select(":.:.:.:.:.:.:.:.:.:.::.:.:.:.:.:Are you logging in or registering?:.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:".light_yellow, [
             "Login",
             "Register"
         ])
