@@ -70,9 +70,9 @@ class Joke < ActiveRecord::Base
         when "Give a comment!!"
             # make a comment from user
             #Main.bmo
-            #self.add_a_comment(user_instance)
             Main.bmo
             self.display_joke(user_instance)
+            self.add_a_comment(user_instance)
             self.users_next_joke(user_instance)
 
         when "Another!!"
@@ -102,7 +102,7 @@ class Joke < ActiveRecord::Base
         comment_table = TTY::Table.new ["Comment :", "By:"],[
         [comment.content, user_instance.user_name]]
         
-        puts comment_table.render(:unicode,indent:10,alignments: [:center, :center], width: 90 , padding: [1,1,0,1])
+        puts comment_table.render(:unicode,alignments: [:center, :center], width: 110 , padding: [1,1,0,1])
         self.users_next_joke(user_instance)
     end
 end
