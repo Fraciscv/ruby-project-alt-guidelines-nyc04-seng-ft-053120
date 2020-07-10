@@ -7,7 +7,7 @@ class Lesson < ActiveRecord::Base
     def self.lesson_interface(user_instance)
         prompt = TTY::Prompt.new
         Main.bmo
-        interface = prompt.select("Welcome to Lessons, what would you like to do?", [
+        interface = prompt.select("🧙🏼‍♂️Welcome to Lessons, what would you like to do?", [
             "Search Lesson",
             "Main Menu"
         ])
@@ -30,7 +30,7 @@ class Lesson < ActiveRecord::Base
             lessons = Lesson.all.map do |m|
                  m.title
             end.flatten
-        lesson_name = prompt.select('Choose a lesson?', lessons, filter: true)
+        lesson_name = prompt.select('🧝🏽‍♂Choose a lesson?🧙🏼‍♂️', lessons, filter: true)
         lesson_found = Lesson.all.find_by(title: lesson_name)
         
         Main.bmo
@@ -58,7 +58,7 @@ class Lesson < ActiveRecord::Base
      def display_lesson(comment) 
         user_table = TTY::Table.new [' Lesson Name :', self.title], [
             [' Summary :', self.summary ],[' Comment :', comment.content ]]
-        puts user_table.render(:unicode,indent:7,alignments:[:left, :left],  width:100, padding: [0,1,0,5],resize: true)
+        puts user_table.render(:unicode,indent:7,alignments:[:left, :left],  width:150, padding: [0,1,0,5],resize: false)
      end
 
      def what_now(user_instance)

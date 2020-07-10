@@ -110,13 +110,13 @@ l19 = Lesson.create(title: "Collaborating Objects Lab" ,summary: "Build classes 
 l20 = Lesson.create(title: "OO My Pets" ,summary: "Build classes that produce objects that interact with one another through associations and behavior.")
 l21 = Lesson.create(title: "OO Banking" ,summary: "Use TDD to code two classes that interact with each other.")
 l22 = Lesson.create(title: "Has Many Objects Through" ,summary: "Understand Has-Many-Through relationships")
-l23 = Lesson.create(title: "Has Many Objects Through Lab" ,summary: "Write methods that use the 'has-many-through' relationship to deliver information on related objects.")
+l23 = Lesson.create(title: "Has Many Objects Through Lab" ,summary: "Write methods that use the 'has-many-through'")
 l24 = Lesson.create(title: "OO Kickstarter" ,summary: "Build classes that produce objects that relate to one another.")
 l25 = Lesson.create(title: "Intro to Inheritance" ,summary: "Learn about inheritance in object oriented Ruby.")
 l26 = Lesson.create(title: "Intro to Inheritance Lab" ,summary: "Define classes that inherit from a shared parent, or super, class.")
 l27 = Lesson.create(title: "Intro to Modules" ,summary: "Learn about modules––another way to lend functionality across classes.")
 l28 = Lesson.create(title: "Intro to Modules Lab" ,summary: "Recognize 'code smells' that indicate the need for refactoring.")
-l29 = Lesson.create(title: "Super Lab" ,summary: "Define methods in the child class that use the super keyword to inherit from and augment methods in the parent class.")
+l29 = Lesson.create(title: "Super Lab" ,summary: "Define methods in the child class that use the super keyword")
 l30 = Lesson.create(title: "Mass Assignment Lab" ,summary: "Use keyword arguments to define an initialize method.")
 
 
@@ -148,4 +148,4 @@ comment7 = Comment.create(content: "this joke was super!", user_id:manon.id, jok
 # minion4 = Minion.create(user_id:karem.id, minion_counter:9)
 # minion5 = Minion.create(user_id:barbara.id, minion_counter:999)
 
-puts "SEEDE YO!"
+puts "SEEDED YO!"

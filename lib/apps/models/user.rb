@@ -8,9 +8,9 @@ class User < ActiveRecord::Base
         random_usernames = [
             "PowerpuffGirl279", "WedgeBiggs007", "AlveeRules", "YogaPosePretzel", "NoForksGiven","KanyeForPresident","CoffeeDaddy", "HobbitFeet429", "Mordor69", "Raffyisbae", "CharmanderCHARBOK", "TeenageMutantNinjaSquirtles", "Raffyisagoodboy", "RaffyAteMyLab", "ChuckNorrisLover"].sample
         prompt = TTY::Prompt.new(active_color: :yellow)
-        username = prompt.ask("What would you like your username to be?")
+        username = prompt.ask("🧝🏽‍♂️What would you like your username to be?🧙🏼‍♂️")
         if User.find_by(user_name: username)
-            puts "~~~~~~Sorry that user name was taken, how about you try: #{random_usernames}~~~~~"
+            puts "~~~~~~🧙🏼‍♂️Sorry that user name was taken, how about you try: #{random_usernames} 🧝🏽‍♂️~~~~~"
             self.check_user
         else
             username
@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
     def self.log_someone_in
         #Main.bmo
         prompt = TTY::Prompt.new(active_color: :yellow)
-        username = prompt.ask("what is your username?")
+        username = prompt.ask("🧝🏽‍♂️what is your username?🧙🏼‍♂️")
         pass = self.password_prompt
             if User.find_by(user_name: username) && User.find_by(password: pass)
                 
@@ -37,45 +37,17 @@ class User < ActiveRecord::Base
                 user_instance.display_profile
                 user_instance
             else
-                puts "~~~your username or password are incorrect.~~~"
+                puts "~~~🧙🏼‍♂️your username or password are incorrect.🧝🏽‍♂️~~~"
                 self.log_someone_in
 
             end
     end
 
-    def self.create_a_new_user
-        #
-        prompt = TTY::Prompt.new(active_color: :yellow)
-        username = self.check_user
-        pass = self.password_prompt
-        cohort = prompt.select("What Cohort do you belong to", [
-            "Pryñatas",
-            "404's", 
-            "The Git Up",
-            "NOLB",
-            "The Go Gitters",
-            "French-Pry Cult",
-            "Alvee nap-time cult",
-            "Teflon",
-            "Shrimp Spine",
-            "Team Otha",
-            "Team Ian",
-            "Team Michelle",
-            "Team Ethan"
-        ])
-        
-        new_user = User.create(user_name: username, password: pass, cohort: cohort, member_since: Time.now, status:"Online".green.blink)
-    
-        Main.bmo
-        self.welcome_sign(new_user)
-        new_user
-    end
-
     def self.welcome_sign(user_instance)
         puts "                                               ~~~~~ ⚉ Welcome #{user_instance.user_name} ⚉ ~~~~~                                   ".yellow    
-        puts "                       :.:.:.:.:.:       Your password is  ▷▷▷▷#{user_instance.password}◁◁◁◁  don't lose it,        :.:.:.:.:.:           ".yellow
+        puts "                       :.:.:.:.:.:       Your password is  ▷▷▷▷ #{user_instance.password} ◁◁◁◁  don't lose it,        :.:.:.:.:.:           ".yellow
         puts "                              :.:.:.:.:.:      because we have no way of retrieving it for you...            :.:.:.:.:.:             ".yellow
-        puts "                     :.:.:.:.:.:          OH!! and ummm, you now belong to us. #{user_instance.cohort}         :.:.:.:.:.:              ".yellow
+        puts "                     :.:.:.:.:.:          OH!! and ummm, you now belong to us.🧙🏼‍♂️🧝🏽‍♂️ #{user_instance.cohort}         :.:.:.:.:.:              ".yellow
 
     end  
 
@@ -85,7 +57,7 @@ class User < ActiveRecord::Base
 
         password = prompt.mask("What is your password?", mask: heart) 
         if password.length < 4
-            puts "Your password is not long enough, to party (minimum 4 character)"
+            puts "🧝🏽‍♂️Your password is not long enough, to party (minimum 4 character)"
             self.password_prompt
         else 
             password
@@ -103,7 +75,7 @@ class User < ActiveRecord::Base
     def self.edit_my_profile(user_instance)
         prompt = TTY::Prompt.new(active_color: :yellow)
         mutables = ["My Name", "Cohort", "Bio","Change Password", "Self-Destruct".colorize(:red)]
-        users_choice = prompt.select("What would you like to change?",mutables)
+        users_choice = prompt.select("🧙🏼‍♂️What would you like to change?🧝🏽‍♂️",mutables)
         case users_choice 
         when "My Name"
             #   prompt and change name
@@ -132,7 +104,7 @@ class User < ActiveRecord::Base
 
     def prompt_for_users_name
         prompt = TTY::Prompt.new(active_color: :yellow) 
-        users_input = prompt.ask(":.:.:.:.:.:Well what would like to be called?:.:.:.:.:.:")
+        users_input = prompt.ask(":.:.:.:.:.:🧙🏼‍♂️Well, what would like to be called?🧝🏽‍♂️:.:.:.:.:.:")
         puts "Congrats Your Name Is Now #{users_input}"
         self.update_and_display(name: users_input) 
 
@@ -141,7 +113,7 @@ class User < ActiveRecord::Base
     def prompt_for_cohort
         
         prompt = TTY::Prompt.new(active_color: :yellow)
-        prompt.yes?(":.:.:.:.:.:Are you betraying your cohort? You can answer honestly... I won't judge. ;D :.:.:.:.:.:")
+        prompt.yes?(":.:.:.:.:.:🧝🏽‍♂️Are you betraying your cohort? You can answer honestly... I won't judge. 🧙🏼‍♂️ :.:.:.:.:.:")
         cohort = prompt.select("What Cohort do you belong to", 
         [
             "Pryñatas",
@@ -179,7 +151,7 @@ class User < ActiveRecord::Base
         system('cls')
         count = 0
         prompt = TTY::Prompt.new 
-        response = prompt.yes?(":.:.:.:.:.::.:.:.:.:.:Are you sure you want to delete your data?:.:.:.:.:.::.:.:.:.:.:")
+        response = prompt.yes?(":.:.:.:.:.::.:.:.:.:.:🧙🏼‍♂️Are you sure you want to delete your data?🧝🏽‍♂️:.:.:.:.:.::.:.:.:.:.:")
         if response == true
             puts "Loading your data"
             while count < 3 do
@@ -289,7 +261,7 @@ class User < ActiveRecord::Base
         
         prompt = TTY::Prompt.new 
         users_input = prompt.select("What would you like to do next? ", [
-            "Update Somthing Else",
+            "Update Something Else",
             "Take Me Back Home"
         ])
         if users_input == "Update Something Else"

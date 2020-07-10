@@ -21,13 +21,13 @@ class Main
                                  / / /   / / /   🚀 / / /___/ / /      / / /   / / /      / / /___/ / /           .
          💫                      / / /   / / /     / / /____\/ /      / / /   / / /  *   / / /____\/ /   *                              
                 *               \/_/    \/_/       \/_________/       \/_/    \/_/       \/_________/                                  
-                                            .                                  .'.colorize(:yellow)   
-    puts '                                                                              Version  2.4.3'.colorize(:blue)
+                                            .                                  .'.light_yellow   
+    puts '                                                                              Version  2.4.3'.blue
 
     sleep(0.25)                                                                        
        puts '                        ============================== a Netaly and Francisco production ==========                    '.white
     sleep(0.20)   
-       puts '                           ============================== Welcome to our application!=================                      
+       puts '                           ==============================  🧙🏼‍♂️Welcome to our application!🧝🏽‍♂️=================                      
        
        
        ____^/\___^--____/\____O______________/\/\---/\___________---__________________/\/\---/\___________---___________________
@@ -44,7 +44,7 @@ class Main
     end
 
     def login_register_prompt
-        answer = prompt.select("gi:.:.:.:.:.:.:.:.:.:.::.:.:.:.:.:Are you logging in or registering?:.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:".light_yellow, [
+        answer = prompt.select(" .:.:.:.:.:.:.:.:.:.::.:.:.:.:.:🧙🏼‍♂️🧝🏽‍♂️Are you logging in or registering?:.:.:.:.:.::.:.:.:.:.::.:.:.:.:.: ".light_yellow, [
             "Login",
             "Register"
         ])
@@ -72,30 +72,30 @@ class Main
 
     def users_interface(user_instance)
         activity_options = [
-            "Looking for Mischief",
-            "Looking to update",
-            "Seeking Knowledge",
+            "Looking for mischief",
+            "Alter profile",
+            "Drink from the cup of knowledge",
             "Support",
-            "EXIT",
+            "EXIT" ,
             "                   "
         ]
-        user_input = prompt.select(":.:.:.:.:.:What are you looking for today?:.:.:.:.:.:",activity_options )
+        user_input = prompt.select(":.:.:.:.:.: 🧙🏼‍♂️🧝🏽‍♂️What are you looking for today?:.:.:.:.:.:",activity_options )
 
         case user_input   
-        when "Looking for Mischief" 
+        when "Looking for mischief" 
             #joke_method
             puts 'joke jokes jokes' 
             Joke.joke_interface(user_instance)
             Main.bmo
             user.display_profile
-        when "Looking to update"
+        when "Alter profile"
             #profile_edit
-            puts '        ~~~                       ~~~~~You have choosen to "Pimp your Profile"~~~~                       ~~~~'.light_yellow
+            puts '        ~~~                       ~~~~~🧙🏼‍♂️🧝🏽‍♂️You have choosen to "Pimp your Profile"~~~~                       ~~~~'.light_yellow
             
             User.edit_my_profile(user_instance)
             Main.bmo
             user.display_profile
-        when "Seeking Knowledge"
+        when "Drink from the cup of knowledge"
             #lesson_review
             Lesson.lesson_interface(user_instance)   
         when "Support"
@@ -105,7 +105,7 @@ class Main
                   ADA : Ae2tdPwUPEZ6eRzNB8p6145WGkAYzQATJit56DXhR26iFU4rik7xzMHmAvW"
                   sleep(10)
             puts "Thank you!"
-                  sleept(3)
+                  sleep(3)
                   self.new_user 
         when "EXIT"
            self.new_user   
@@ -113,10 +113,11 @@ class Main
             spinner = TTY::Spinner.new("[:spinner] Hacking the Gibson ...", format: :pulse_2)
             spinner.auto_spin # Automatic animation with default interval
             sleep(5) # Perform task
-            spinner.stop("Step 1. type 'User.all' \nto hack the Gibson \nStep 2. type 'q' \nthen 'exit' to kill the worm.") # Stop animation
+            spinner.stop("Step 1. type 'User.all' to hack the Gibson Step 2. type 'q' then 'exit' to kill the worm.").light_red.blink # Stop animation
             binding.pry
             #bmo_dance_party
-            puts "You Hacked the Gibson!".red.blink
+            puts "You Hacked the Gibson!".light_red.blink
+            self.new_user 
         end
         # user.display_profile
     end
