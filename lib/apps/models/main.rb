@@ -33,7 +33,7 @@ class Main
        ____^/\___^--____/\____O______________/\/\---/\___________---__________________/\/\---/\___________---___________________
        /\^   ^  ^    ^                  ^^ ^                                       ^          ^       --- 
              --           -            --  -      -         ---  __       ^              --  -      -         ---  __    
-       --  __                      ___--  ^  ^                         --  __    ^                         --  __   
+       --  __                      ___--  ^  ^                         --  __    ^                        --  __   
                  -            --  -      -         ---  __   __       ^              --  -     __       ^              --  -  
      
     '.blue
@@ -44,7 +44,7 @@ class Main
     end
 
     def login_register_prompt
-        answer = prompt.select(":.:.:.:.:.:.:.:.:.:.::.:.:.:.:.:Are you logging in or registering?:.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:".light_yellow, [
+        answer = prompt.select("gi:.:.:.:.:.:.:.:.:.:.::.:.:.:.:.:Are you logging in or registering?:.:.:.:.:.::.:.:.:.:.::.:.:.:.:.:".light_yellow, [
             "Login",
             "Register"
         ])
@@ -75,6 +75,7 @@ class Main
             "Looking for Mischief",
             "Looking to update",
             "Seeking Knowledge",
+            "Support",
             "EXIT",
             "                   "
         ]
@@ -96,7 +97,16 @@ class Main
             user.display_profile
         when "Seeking Knowledge"
             #lesson_review
-            Lesson.lesson_interface(user_instance)     
+            Lesson.lesson_interface(user_instance)   
+        when "Support"
+            puts "Please make donations to the following wallets to Support us.
+                  BTC : bc1qlt2qpyhw8nfel87mm654hyj2wq97afe786ymss
+                  ETH : 0xE710EE81e8ACefd8760CCb75615Af16076713E5c
+                  ADA : Ae2tdPwUPEZ6eRzNB8p6145WGkAYzQATJit56DXhR26iFU4rik7xzMHmAvW"
+                  sleep(10)
+            puts "Thank you!"
+                  sleept(3)
+                  self.new_user 
         when "EXIT"
            self.new_user   
         else
