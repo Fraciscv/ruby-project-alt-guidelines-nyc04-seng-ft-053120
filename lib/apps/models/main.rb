@@ -27,7 +27,7 @@ class Main
     sleep(0.25)                                                                        
        puts '                        ============================== a Netaly and Francisco production ==========                    '.white
     sleep(0.20)   
-       puts '                      ============================== Welcome to our application!=================                      
+       puts '                             ============================== Welcome to our application!=================                      
        
         '.blue
                                                     
@@ -82,7 +82,7 @@ class Main
             user.display_profile
         when "Looking to update"
             #profile_edit
-            puts '~~~~~You have choosen to "Pimp my Profile"~~~~'.blue.on_yellow
+            puts '        ~~~                            ~~~~~You have choosen to "Pimp my Profile"~~~~                          ~~~~'.light_yellow
             
             User.edit_my_profile(user_instance)
             Main.bmo

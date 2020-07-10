@@ -56,8 +56,9 @@ class Joke < ActiveRecord::Base
     end
     def display_joke(user_instance)
         joke_table = TTY::Table.new ["Your Joke is :"],[[self.content]]
+        
 
-        puts joke_table.render(:unicode, alignments: [:center, :center], padding: [1,1,0,1])
+        puts joke_table.render(:unicode,indent:10,alignments:[:center, :center],  width:100, padding: [0,1,0,1])
         self.display(self.add_a_comment(user_instance), user_instance)
         self.users_next_joke(user_instance)
         
@@ -100,7 +101,7 @@ class Joke < ActiveRecord::Base
         comment_table = TTY::Table.new ["Comment :", "By:"],[
         [comment.content, user_instance.user_name]]
         
-        puts comment_table.render(:unicode, alignments: [:center, :center], padding: [1,1,0,1])
+        puts comment_table.render(:unicode,indent:10,alignments: [:center, :center], width: 90 , padding: [1,1,0,1])
         self.users_next_joke(user_instance)
     end
 end
