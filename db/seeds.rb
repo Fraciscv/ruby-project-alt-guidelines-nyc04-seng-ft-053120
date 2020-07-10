@@ -19,6 +19,15 @@ karem = User.create(user_name: "Teflon", name: "Karem Johanson" ,password: "1234
 
 #create jokes
 #content, genre, like_id
+ja = Joke.create(content: "Welcome to 2020 where every mmonth is a level in Jumanji", genre: "Pop Culture")
+jb = Joke.create(content: "The year 2020 could be said to have been written by George RR Martin.", genre: "Pop Culture")
+jc = Joke.create(content: "That moment when you are so broke putting money into your savings is when you put your cash in the other pocket", genre: "Pop Culture")
+jd = Joke.create(content: "KaReEn", genre: "Pop Culture")
+je = Joke.create(content: "Never trust an atom... they make up everything ", genre: "Pop Culture")
+jf = Joke.create(content: "Parallel lines have so much in common.... its a shame they never meet.", genre: "Pop Culture")
+jg = Joke.create(content: "", genre: "Pop Culture")
+jh = Joke.create(content: "", genre: "Pop Culture")
+ji = Joke.create(content: "", genre: "Pop Culture")
 joke1 = Joke.create(content: "Chuck Norris threw a grenade and killed 50 people, then it exploded.", genre: "Chuck Norris Fact")
 joke2 = Joke.create(content: "An SQL query goes into a bar, walks up to two tables, and asks, “Can I join you?", genre: "Code: Joke")
 joke3 = Joke.create(content: "Two bytes meet. The first byte asks, “Are you ill?”
@@ -32,6 +41,24 @@ j2 = Joke.create(content: "3 Database SQL walked into a noSQL bar they soon walk
 j3 = Joke.create(content: "99 bugs in the code, 99 bugs in the code! Take one down, patch it around. 127 bugs in the code.", genre: "Code: Joke")
 j4 = Joke.create(content: "The only programming joke I know......... is my code", genre: "Code: Joke")
 j5 = Joke.create(content: "Just keep calm, code on, and Blindly.Pray", genre: "Code: Joke")
+j6 = Joke.create(content: "Debuggin is like being the detective in a crime movie where you're also the murderer.", genre: "Code: Joke")
+j7 = Joke.create(content: "What's a computer's favorite beat?... An algo-rhythm.", genre: "Code: Joke")
+j8 = Joke.create(content: "I hope your code behaves on Monday the same way it did on Friday.", genre: "Code: Joke")
+j9 = Joke.create(content: "Hide and seek champion ':' since 1958 " , genre: "Code: Joke")
+j0 = Joke.create(content: "The Hardest part of being a programmer, is naming variables.", genre: "Code: Joke")
+j01 = Joke.create(content: "That moment when they tell you the error is on line 27 but it originated from line 234", genre: "Code: Joke")
+j02 = Joke.create(content: "That moment when you try to look up a ruby enumerable and you get a bunny called MAX .", genre: "Code: Joke")
+j03 = Joke.create(content: "There are 10 types of people in the world: those who understand binary, and those who don’t.", genre: "Code: Joke")
+j04 = Joke.create(content:"If you have anything staged, commit now or stash forever",genre: "Code: Joke")
+j05 = Joke.create(content:"I kissed a git, and I liked it. I hope my repo don't mind it.",genre: "Code: Joke")
+j06 = Joke.create(content:"Nurture your git-twigs and they will grow into a full branch",genre: "Code: Joke")
+j07 = Joke.create(content:"When you play the game of clones, you merge or you reset --hard.",genre: "Code: Joke")
+j08 = Joke.create(content:"In case of fire: git commit, git push, leave the building",genre: "Code: Joke")
+j09 = Joke.create(content:"Whats the object-oriented way to become wealthy?.. inheritance",genre: "Code: Joke")
+j10 = Joke.create(content:"I never tell the same joke twice...I have a DRY sense of humor.",genre: "Code: Joke")
+j11 = Joke.create(content:" Why don't bachelors like Git?... cause they are afraid to commit",genre: "Code: Joke")
+j12 = Joke.create(content:"A programmer was arrested for writing unreadable code. They refused to comment.",genre: "Code: Joke")
+
 
 #create lessons
 #title, summary, location
