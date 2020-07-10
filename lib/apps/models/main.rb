@@ -10,23 +10,26 @@ class Main
         puts '              
         
                                                          
-                                          _       _    _                        _       _    _               
-                                        / /\    / /\ /\_\                     / /\    / /\ /\_\             
-                                       / / /   / / // / / *       _          / / / * / / // / /         _   
-                      *               / /_/   / / / \ \ \__      /\_\       / /_/   / / / \ \ \__   *  /\_\ 
+                                          _       _    _                        _       _    _               .
+                        .               / /\    / /\ /\_\           ✨         / /\    / /\ /\_\             
+                                       / / /   / / // / / *       _      .   / / / * / / // / /         _   
+                      *               / /_/   / / / \ \ \__      /\_\       / /_/   / / / \ \ \__   *  /\_\           🪐
                                      / /\ \__/ / /   \ \___\    / / /      / /\ \__/ / /   \ \___\    / / / 
-                               *    / /\ \___\/ /     \__  /   / / /      / /\ \___\/ /     \__  /   / / /  
-                                   / / /\/___/ /      / / /   / / /      / / /\/___/ /      / / /   / / /   
-                                  / / /   / / /      / / /   / / /   *  / / /   / / /      / / /   / / /    
-                                 / / /   / / /      / / /___/ / /      / / /   / / /      / / /___/ / /     
-                                / / /   / / /    * / / /____\/ /      / / /   / / /  *   / / /____\/ /   *                              
-                *               \/_/    \/_/       \/_________/       \/_/    \/_/       \/_________/                               '.colorize(:yellow)    
-                                                                                   puts 'Version  1.0.0                             '.colorize(:blue)
+                               *    / /\ \___\/ /     \__  /   / / /      / /\ \___\/ /     \__  /   / / /  .
+           .             ☄️         / / /\/___/ /      / / /   / / /      / / /\/___/ /      / / /   / / /   
+                                  / / /   / / /      / / /   / / /   *  / / /   / / /    ✨/ / /   / / /    
+                                 / / /   / / /   🚀 / / /___/ / /      / / /   / / /      / / /___/ / /           .
+         💫                      / / /   / / /     / / /____\/ /      / / /   / / /  *   / / /____\/ /   *                              
+                *               \/_/    \/_/       \/_________/       \/_/    \/_/       \/_________/                                  
+                                            .                                  .'.colorize(:yellow)   
+    puts '                                                                              Version  2.4.3'.colorize(:blue)
 
     sleep(0.25)                                                                        
        puts '                        ============================== a Netaly and Francisco production ==========                    '.white
     sleep(0.20)   
-       puts '                      ============================== Welcome to our application!=================                      '.blue
+       puts '                      ============================== Welcome to our application!=================                      
+       
+        '.blue
                                                     
         # font = TTY::Font.new(:block)
         # puts font.write("Welcome" "to\n" "our" "application", letter_spacing: 2)
@@ -64,7 +67,7 @@ class Main
         activity_options = [
             "Looking for Mischief",
             "Looking to update",
-            "Seeking Knowledge", 
+            "Seeking Knowledge",
             "EXIT",
             "                   "
         ]
@@ -74,7 +77,6 @@ class Main
         when "Looking for Mischief" 
             #joke_method
             puts 'joke jokes jokes' 
-            binding.pry
             Joke.joke_interface(user_instance)
             Main.bmo
             user.display_profile

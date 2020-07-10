@@ -30,7 +30,8 @@ class Joke < ActiveRecord::Base
             user_input = self.prompt.select("Choose: ", self.all_the_jokes_genres, filter: true)
             # search by joke genre and display it 
             joke_array = self.find_by_genre(user_input)
-            joke_instance = joke_array.sample.display_joke(user_instance)
+            joke_instance = joke_array.sample
+            joke_instance.display_joke(user_instance)
             # self.deploy_the_jokes(joke_array, user_instance)
             joke_instance.users_next_joke(user_instance)
         else
@@ -57,16 +58,21 @@ class Joke < ActiveRecord::Base
         joke_table = TTY::Table.new ["Your Joke is :"],[[self.content]]
 
         puts joke_table.render(:unicode, alignments: [:center, :center], padding: [1,1,0,1])
+        self.display(self.add_a_comment(user_instance), user_instance)
         self.users_next_joke(user_instance)
+        
     end
     def users_next_joke(user_instance)
         users_input = self.class.prompt.select("What would you like to do next?", ["Give a comment!!", "Another!!", "Take me to Jokes main"])
         case users_input
         when "Give a comment!!"
             # make a comment from user
+            #Main.bmo
+            #self.add_a_comment(user_instance)
             Main.bmo
-            self.add_a_comment(user_instance)
+            self.display_joke(user_instance)
             self.users_next_joke(user_instance)
+
         when "Another!!"
             # shows the next joke with same genre as self (instance)
             # gives the user the option again

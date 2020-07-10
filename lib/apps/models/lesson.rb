@@ -56,9 +56,9 @@ class Lesson < ActiveRecord::Base
     end
 
      def display_lesson(comment) 
-        user_table = TTY::Table.new ['Lesson Name', self.title], [
-            ['Summary:', self.summary ],['comment:', comment.content ]]
-        puts user_table.render(:unicode, alignments: [:center, :center], padding: [1,1,0,1] )
+        user_table = TTY::Table.new [' Lesson Name :', self.title], [
+            [' Summary :', self.summary ],[' Comment :', comment.content ]]
+        puts user_table.render(:unicode,indent:7,alignments:[:left, :left],  width:100, padding: [0,1,0,5],resize: true)
      end
 
      def what_now(user_instance)
@@ -74,12 +74,12 @@ class Lesson < ActiveRecord::Base
             comment = prompt.ask('content:')
             new_comment = Comment.create(content: comment, lesson_id: self.id)
             self.display_lesson(new_comment)
-            puts "Your review is being submitted,".green.blink 
-            sleep(3)
-            puts "redirecting you to lesson main page.".yellow.blink
-            sleep(3)
-            puts "this message will self distruct in 10 seconds".red.blink
-            sleep(10)
+            puts "Your review is being submitted,".magenta
+            sleep(2.5)
+            puts "redirecting you to lesson main page.".light_green
+            sleep(2.2)
+            puts "this message will self distruct in 5 seconds".light_red
+            sleep(5)
             Lesson.lesson_interface(user_instance)
         when "Main Menu"
             Main.bmo

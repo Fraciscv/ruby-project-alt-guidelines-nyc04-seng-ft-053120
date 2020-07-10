@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
                 user_instance = User.find_by(user_name: username)
                 user_instance.status = "Online".green.on_black.blink
                 Main.bmo
-                puts "~~~~Welcome back #{username} today is #{Time.now}~~~~~ " 
+                puts "                              ~~~~Welcome back #{username} today is #{Time.now}~~~~~ " 
                 
                 user_instance.display_profile
                 user_instance
@@ -72,10 +72,10 @@ class User < ActiveRecord::Base
     end
 
     def self.welcome_sign(user_instance)
-        puts "                                 ~~~~~  Welcome #{user_instance.user_name},  ~~~~~                                       ".yellow.on_black     
-        puts "                     Your password is >>>#{user_instance.password}<<< don't lose it,                             ".black.on_yellow
-        puts "                         because we have no way of retrieving it for you... <3                                   ".yellow.on_black
-        puts "                       OH!! and ummm, you now belong to us. #{user_instance.cohort}                              ".black.on_yellow
+        puts "                                 ~~~~~  Welcome #{user_instance.user_name},  ~~~~~                               ".yellow    
+        puts "                     Your password is >>>#{user_instance.password}<<< don't lose it,                             ".yellow
+        puts "                         because we have no way of retrieving it for you... <3                                   ".yellow
+        puts "                       OH!! and ummm, you now belong to us. #{user_instance.cohort}                              ".yellow
 
     end  
 
@@ -94,9 +94,10 @@ class User < ActiveRecord::Base
     end
 
     def display_profile   
-        user_table = TTY::Table.new ['User Name','Name','Status','Cohort','Bio'], [
+        user_table = TTY::Table.new ['User Name','    Name    ','Status','Cohort','Bio'], [
             [self.user_name, self.name, self.status,self.cohort, self.bio]]
-        puts user_table.render(:unicode, alignments: [:center, :center], padding: [1,1,0,1] )    
+        puts user_table.render(:unicode,indent:10,alignments:[:center, :center,:center],  width:100, padding: [0,1,0,1],resize: true)
+        
     end
 
     def self.edit_my_profile(user_instance)
